@@ -1,0 +1,44 @@
+.navigation {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 16px 24px;
+  border-bottom: 1px solid #e5e7eb;
+  background: #fff;
+}
+
+.link {
+  padding: 10px 16px;
+  border-radius: 8px;
+  color: #6b7280;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.link:hover {
+  background: #f5f3ff;
+  color: #6d28d9;
+}
+
+.link[aria-current="page"] {
+  background: #ede9fe;
+  color: #6d28d9;
+}
+
+.link:focus-visible {
+  outline: 2px solid #7c3aed;
+  outline-offset: 3px;
+}
+
+@media (max-width: 480px) {
+  .navigation {
+    gap: 4px;
+    padding: 12px;
+  }
+
+  .link {
+    padding: 10px;
+    font-size: 12px;
+  }
+}
