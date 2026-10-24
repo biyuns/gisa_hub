@@ -1,0 +1,116 @@
+.page {
+  min-height: calc(100vh - 78px);
+  padding: 52px 32px 36px;
+  background: #f8f9fc;
+  color: #272b3c;
+  font-family: Arial, "Malgun Gothic", sans-serif;
+}
+.container { max-width: 1100px; margin: 0 auto; }
+.header, .sectionHeading { display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+.header { margin-bottom: 30px; }
+.eyebrow { font-size: 10px; color: #9690ab; letter-spacing: 2px; font-weight: 600; margin: 0 0 14px; }
+.header h1 { font-size: 32px; font-weight: 750; letter-spacing: -1.5px; margin: 0 0 13px; }
+.header h1 span { color: #7954df; }
+.description { font-size: 13px; color: #888d9e; line-height: 1.8; margin: 0; }
+.examBadge { display: flex; align-items: center; gap: 8px; padding: 10px 14px; border: 1px solid #e6e8ee; border-radius: 20px; background: #fff; color: #72788a; font-size: 11px; white-space: nowrap; }
+.examBadge span { width: 6px; height: 6px; background: #70b494; border-radius: 50%; }
+.summary { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+.summary article { display: flex; justify-content: space-between; padding: 23px; border: 1px solid #e6e8ef; border-radius: 12px; background: #fff; }
+.summary p { color: #8b90a2; font-size: 12px; margin: 0 0 13px; }
+.summary strong { font-size: 30px; font-weight: 700; }
+.summary strong span { color: #9a9fb0; font-size: 11px; font-weight: 400; margin-left: 6px; }
+.summary small { display: block; color: #a3a7b6; font-size: 10px; margin-top: 10px; line-height: 1.7; }
+.summaryIcon { display: grid; place-items: center; width: 35px; height: 35px; border-radius: 10px; color: #a18acb; background: #f3effb; font-size: 21px; }
+.summary article:nth-child(2) .summaryIcon { color: #c99a60; background: #fff5e9; }
+.summary article:nth-child(3) .summaryIcon { color: #70a68f; background: #edf7f1; }
+.guide { display: flex; align-items: center; gap: 17px; background: #f0ecfc; border: 1px solid #e8e1fa; border-radius: 12px; padding: 22px 25px; margin: 25px 0 36px; }
+.guide > span { color: #a087d1; font-size: 32px; }
+.guide strong { font-size: 13px; font-weight: 600; color: #6e568f; }
+.guide p { color: #9b8eae; font-size: 12px; line-height: 1.8; margin: 7px 0 0; }
+.sectionHeading h2 { font-size: 18px; font-weight: 700; letter-spacing: -.5px; margin: 0; }
+.sectionHeading h2 span { font-size: 11px; color: #9375d4; background: #eee8fc; border-radius: 6px; padding: 3px 8px; margin-left: 7px; vertical-align: middle; }
+.sectionHeading p { font-size: 12px; color: #969baa; margin: 10px 0 0; }
+.sampleBadge { font-size: 10px; color: #a29baa; white-space: nowrap; }
+.filterArea { margin-top: 24px; }
+.tabs { display: flex; gap: 7px; margin-bottom: 18px; }
+.tabs button { border: 1px solid #e6e8ef; border-radius: 7px; padding: 10px 16px; color: #9498a8; background: #fff; font: inherit; font-size: 12px; cursor: pointer; }
+.tabs button[aria-pressed="true"] { color: #fff; background: #7660d1; border-color: #7660d1; }
+.filterRow { display: flex; justify-content: space-between; gap: 18px; background: #fff; border: 1px solid #e7e9f0; border-radius: 10px; padding: 16px 19px; }
+.subjectFilter { display: flex; align-items: center; gap: 14px; color: #9296a5; font-size: 11px; }
+.subjectFilter select { min-width: 210px; background: #fff; border: 1px solid #e6e8ef; border-radius: 6px; padding: 9px 12px; color: #555d71; font: inherit; font-size: 12px; }
+.search { display: flex; align-items: center; gap: 8px; width: 310px; padding: 0 12px; color: #a5a9b7; border: 1px solid #e6e8ef; border-radius: 6px; }
+.search span { font-size: 23px; }
+.search input { min-width: 0; width: 100%; border: 0; background: transparent; font: inherit; font-size: 11px; color: #555d71; padding: 10px 0; }
+.search input::placeholder { color: #adb0bd; }
+.results { display: flex; justify-content: space-between; align-items: center; margin: 20px 0 15px; }
+.results p { font-size: 11px; color: #969baa; margin: 0; }
+.results strong { color: #8d6bc9; }
+.results button { padding: 5px; border: 0; background: transparent; color: #999eae; font: inherit; font-size: 11px; cursor: pointer; }
+.results button:disabled { opacity: .45; cursor: default; }
+.list { display: flex; flex-direction: column; gap: 14px; }
+.card { padding: 25px; border: 1px solid #e5e8f0; border-radius: 12px; background: #fff; }
+.questionRow { display: flex; align-items: center; gap: 20px; }
+.questionNumber { color: #b09bd4; font-size: 18px; font-weight: 600; min-width: 38px; align-self: flex-start; padding-top: 4px; }
+.questionContent { flex: 1; min-width: 0; }
+.labels { display: flex; align-items: center; flex-wrap: wrap; gap: 11px; color: #a3a7b6; font-size: 10px; }
+.subjectTag { color: #9476c0; background: #f5f1fc; padding: 5px 8px; border-radius: 5px; }
+.labels .pendingTag { color: #c39763; }
+.labels .completedTag { color: #6aa18a; }
+.questionContent h3 { font-size: 14px; line-height: 1.9; font-weight: 600; margin: 12px 0 10px; }
+.selectedAnswer { color: #a7a8b5; font-size: 10px; margin: 0; }
+.selectedAnswer span { color: #cc9191; margin-left: 8px; }
+.outlineButton { display: flex; align-items: center; gap: 15px; white-space: nowrap; padding: 10px 13px; background: #faf8fe; color: #9173bf; border: 1px solid #eae3f7; border-radius: 7px; font: inherit; font-size: 11px; cursor: pointer; }
+.outlineButton:hover { background: #f0eafa; }
+.answerPanel { border-top: 1px solid #eeeaf5; margin: 23px 0 0 58px; padding-top: 22px; }
+.options { display: flex; flex-direction: column; gap: 8px; list-style: none; padding: 0; margin: 0; }
+.options li { display: flex; align-items: baseline; gap: 10px; padding: 12px; border-radius: 7px; background: #f8f9fc; color: #868b9a; font-size: 12px; line-height: 1.8; }
+.optionNumber { flex-shrink: 0; }
+.options strong { margin-left: auto; white-space: nowrap; font-size: 10px; font-weight: 500; }
+.options .correctOption { background: #edf7f1; color: #5d967e; }
+.options .wrongOption { background: #fcf0f0; color: #bc8585; }
+.explanation { padding: 18px; margin-top: 18px; background: #f8f5fd; border-radius: 8px; }
+.explanation h4 { color: #8b6ab9; font-size: 12px; font-weight: 600; margin: 0 0 9px; }
+.explanation p { font-size: 12px; color: #9490a2; line-height: 1.9; margin: 0; }
+.completeButton { padding: 10px 15px; margin-top: 17px; color: #fff; background: #8060cf; border: 1px solid #8060cf; border-radius: 7px; font: inherit; font-size: 11px; cursor: pointer; }
+.completeButton[aria-pressed="true"] { color: #8f7ba9; background: #f5f1fc; border-color: #e4dbf2; }
+.notice { color: #a4a9b7; font-size: 11px; line-height: 1.9; text-align: center; margin: 28px 0 0; }
+.empty { text-align: center; padding: 55px 20px; background: #fff; border: 1px dashed #ddd9e8; border-radius: 12px; }
+.empty h3 { font-size: 16px; }
+.empty p { font-size: 12px; color: #969baa; }
+.empty button { padding: 10px 16px; margin-top: 12px; background: #eee8fa; color: #8865bd; border: 0; border-radius: 6px; font: inherit; font-size: 12px; cursor: pointer; }
+.page button:focus-visible, .page select:focus-visible, .page input:focus-visible { outline: 2px solid #9270d8; outline-offset: 3px; }
+@media (max-width: 760px) {
+  .filterRow { flex-wrap: wrap; }
+  .search { width: 100%; }
+  .questionRow { flex-wrap: wrap; gap: 12px; }
+  .questionContent { flex-basis: calc(100% - 58px); }
+  .outlineButton { margin-left: 50px; }
+  .answerPanel { margin-left: 0; }
+}
+@media (max-width: 580px) {
+  .page { padding: 32px 18px; }
+  .header { align-items: flex-start; flex-direction: column; gap: 16px; }
+  .header h1 { font-size: 28px; }
+  .eyebrow { font-size: 8px; }
+  .description { font-size: 12px; }
+  .summary { gap: 8px; }
+  .summary article { padding: 14px 10px; }
+  .summary p { font-size: 10px; }
+  .summary strong { font-size: 25px; }
+  .summary strong span { font-size: 9px; }
+  .summary small { font-size: 8px; }
+  .summaryIcon { display: none; }
+  .guide { padding: 18px 15px; gap: 12px; }
+  .guide strong { font-size: 12px; }
+  .guide p { font-size: 11px; }
+  .sectionHeading h2 { font-size: 16px; }
+  .sectionHeading p { font-size: 11px; line-height: 1.8; }
+  .filterRow { padding: 13px; gap: 12px; }
+  .subjectFilter { width: 100%; }
+  .subjectFilter select { min-width: 0; flex: 1; }
+  .card { padding: 19px 15px; }
+  .questionContent h3 { font-size: 13px; }
+  .labels { gap: 8px; }
+  .notice { font-size: 10px; }
+  .options li { font-size: 11px; gap: 7px; }
+}
