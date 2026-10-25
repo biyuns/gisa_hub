@@ -1,0 +1,29 @@
+.progressHeading { display: flex; justify-content: space-between; margin-top: 25px; color: #969baa; font-size: 11px; }
+.progressHeading span:last-child { color: #8d6bc9; }
+.progress { display: block; width: 100%; height: 6px; margin-top: 10px; border: 0; border-radius: 8px; overflow: hidden; background: #eae6f2; accent-color: #9270d8; }
+.progress::-webkit-progress-bar { background: #eae6f2; border-radius: 8px; }
+.progress::-webkit-progress-value { background: #9270d8; border-radius: 8px; }
+.progress::-moz-progress-bar { background: #9270d8; border-radius: 8px; }
+.questionBody { margin: 15px 0 0 58px; }
+.choices { display: flex; flex-direction: column; gap: 8px; min-width: 0; padding: 0; margin: 0; border: 0; }
+.legend { padding: 0; margin-bottom: 12px; color: #969baa; font-size: 11px; }
+.choice { display: flex; align-items: baseline; gap: 11px; padding: 12px 14px; border: 1px solid #e9eaf1; border-radius: 7px; color: #737b8e; background: #fafbfe; font-size: 12px; line-height: 1.8; cursor: pointer; }
+.choice:has(input:checked) { border-color: #b5a0df; background: #f5f1fc; color: #8562b9; }
+.choice:has(input:focus-visible) { outline: 2px solid #9270d8; outline-offset: 3px; }
+.choice input { accent-color: #8060cf; flex-shrink: 0; margin: 0; }
+.choiceNumber { flex-shrink: 0; }
+.choice strong { margin-left: auto; white-space: nowrap; font-size: 10px; font-weight: 500; }
+.choices:disabled .choice { cursor: default; }
+.choices .correct, .choices .correct:has(input:checked) { color: #5d967e; background: #edf7f1; border-color: #cce5d6; }
+.choices .incorrect:has(input:checked) { color: #bc8585; background: #fcf0f0; border-color: #efd4d4; }
+.actions { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-top: 18px; }
+.actions > span { color: #a3a7b6; font-size: 10px; line-height: 1.8; }
+.submitButton { display: flex; align-items: center; gap: 20px; flex-shrink: 0; padding: 11px 16px; border: 1px solid #8060cf; border-radius: 7px; background: #8060cf; color: #fff; font: inherit; font-size: 11px; cursor: pointer; }
+.submitButton:hover:not(:disabled) { background: #7051bd; }
+.submitButton:disabled { border-color: #e8e3f1; background: #f0ecf7; color: #aaa1bb; cursor: default; }
+@media (max-width: 760px) { .questionBody { margin-left: 0; } }
+@media (max-width: 580px) {
+  .choice { padding: 11px 10px; gap: 8px; font-size: 11px; }
+  .actions { align-items: flex-start; flex-direction: column; gap: 12px; }
+  .actions button { justify-content: center; width: 100%; margin-left: 0; }
+}
