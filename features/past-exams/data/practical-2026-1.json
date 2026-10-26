@@ -1,0 +1,149 @@
+{
+  "id": "practical-2026-1",
+  "title": "2026년 1회 실기 임시 데이터",
+  "year": 2026,
+  "round": 1,
+  "examType": "practical",
+  "questions": [
+    {
+      "id": "practical-2026-1-1",
+      "number": 1,
+      "promptMarkdown": "다음은 C언어에 대한 문제이다. 아래 코드를 확인하여 알맞는 출력값을 작성하시오.\n\n```c\n#include <stdio.h>\n\ndouble arr1(int p[], int len) {\n    double av = 0;\n    int i;\n    for (i = 0; i < len; i++) {\n        av += (double) p[i];\n    }\n    return av / len;\n}\n\ndouble arr2(int * p, int len) {\n    double av = 0;\n    int i;\n    for (i = 0; i < len; i++) {\n        av += (double)(*(p + i));\n    }\n    return av / len;\n}\n\nint main() {\n    int arr[10] = {\n        80,\n        20,\n        50,\n        55,\n        45,\n        95,\n        55,\n        10,\n        40,\n        80\n    };\n    int len = 10;\n\n    printf(\"%.2f\", arr1(arr, len) + arr2(arr, len));\n\n    return 0;\n}\n```",
+      "answerMarkdown": "106.00",
+      "explanationMarkdown": "### 풀이 및 복습 — double 형 변환과 printf 출력 형식\n\n<b>1. double 형 변환</b>\n\n- <code>(double)</code>은 해당 값을 실수형으로 변환합니다. 예: <code>(double)80</code> → <code>80.0</code>\n- 원래 배열의 자료형이나 값이 변경되는 것은 아닙니다.\n- 정수 ÷ 정수는 소수 부분을 버리고, 실수 ÷ 정수는 소수 부분을 유지합니다.\n\n```c\nint a = 5, b = 2;\ndouble x = a / b;          // 2.0\ndouble y = (double)a / b;  // 2.5\n```\n\n- <code>double</code> 변수에 저장하더라도 <b>정수끼리 먼저 나누었다면</b> 소수 부분은 이미 버려집니다.\n\n<b>2. 반환값과 출력값</b>\n\n- <code>arr1(arr, len)</code>: 합계 530 ÷ 10 → <code>53.0</code> 반환\n- <code>arr2(arr, len)</code>: 합계 530 ÷ 10 → <code>53.0</code> 반환\n- <code>p[i]</code>와 <code>*(p+i)</code>는 동일한 배열 요소에 접근합니다.\n- 두 함수의 합: <code>53.0 + 53.0 = 106.0</code>\n- <code>printf(\"%.2f\", ...)</code>가 소수점 아래 두 자리로 <b>출력</b>하여 <code>106.00</code>이 됩니다. 반환값 자체를 바꾸지는 않습니다.\n\n<b>3. printf 소수점 출력 형식</b> (53.5678 기준)\n\n- <code>%f</code> → <code>53.567800</code> (기본 소수점 아래 6자리)\n- <code>%.0f</code> → <code>54</code> (소수점 아래 0자리)\n- <code>%.1f</code> → <code>53.6</code>\n- <code>%.2f</code> → <code>53.57</code>\n- <code>%.3f</code> → <code>53.568</code>\n- <code>%.nf</code> → 소수점 아래 n자리까지 반올림하여 표시\n- <code>(int)53.9</code> → <code>53</code> (반올림이 아니라 소수 부분 버림)\n\n<b>시험장에서 이렇게 보면 됩니다:</b> <code>double</code>은 자료형, <code>(double)</code>은 형 변환, <code>%.nf</code>는 출력 자릿수 지정입니다. 나눗셈 전에 형 변환이 일어나는지와 printf 형식을 먼저 확인하세요."
+    },
+    {
+      "id": "practical-2026-1-2",
+      "number": 2,
+      "promptMarkdown": "다음 설명에 해당하는 디자인 패턴의 유형을 괄호( ) 안에 쓰시오.\n\n- ( ㄱ ) 패턴은 기능의 클래스 계층과 구현의 클래스 계층을 연결\n- ( ㄴ ) 패턴은 한 객체의 상태가 바뀌면 그 객체에 의존",
+      "answerMarkdown": "- ㄱ: Bridge\n- ㄴ: Observer",
+      "explanationMarkdown": ""
+    },
+    {
+      "id": "practical-2026-1-3",
+      "number": 3,
+      "promptMarkdown": "데이터베이스(DB) 설계 절차를 순서대로 나타낸 것이다. 각 빈칸에 들어갈 알맞은 용어를 쓰시오.\n\n<b>DB 설계 절차</b>\n\n( ㄱ )\n\n↓\n\n( ㄴ )\n\n↓\n\n( ㄷ )\n\n↓\n\n( ㄹ )\n\n↓\n\n( ㅁ )\n\n<b>\\[보기\\]</b>\n\n구현 / 개념적 설계 / 논리적 설계 / 요구사항 분석 / 물리적 설계",
+      "answerMarkdown": "ㄱ. 요구사항 분석\n\nㄴ. 개념적 설계\n\nㄷ. 논리적 설계\n\nㄹ. 물리적 설계\n\nㅁ. 구현",
+      "explanationMarkdown": ""
+    },
+    {
+      "id": "practical-2026-1-4",
+      "number": 4,
+      "promptMarkdown": "다음은 비기능적 요구사항에 대한 설명이다. 각 항목이 의미하는 요구사항 유형을 보기에서 골라 쓰시오.\n\n1. 시스템 운영 중 로그 관리 및 모니터링 기능을 제공해야 한다.\n2. 시스템 운영 시 최소 메모리 용량을 확보해야 하며, 자원 사용량은 제한 범위 내에 있어야 한다.\n3. 사용자 요청에 대한 응답 시간은 최대 1분을 초과하지 않아야 한다.\n\n<b>보기</b>\n\n신뢰성, 가용성, 운영, 유지보수성, 자원, 성능, 이식성, 보안, 품질",
+      "answerMarkdown": "1. 운영\n2. 자원\n3. 성능",
+      "explanationMarkdown": "### 비기능적 요구사항 개념 정리\n\n<b>비기능적 요구사항(Non-Functional Requirements)</b>은 시스템이 무엇을 하는지보다, 기능을 어떤 조건과 수준으로 수행해야 하는지를 정의합니다.\n\n- 기능적 요구사항: 사용자가 아이디와 비밀번호로 로그인할 수 있어야 한다.\n- 비기능적 요구사항: 로그인 요청은 3초 이내에 처리해야 한다.\n- 비기능적 요구사항: 비밀번호는 암호화하여 저장해야 한다.\n\n<b>구분 방법:</b> 기능적 요구사항은 '무엇을 하는가?', 비기능적 요구사항은 '얼마나 빠르고 안전하며 안정적으로 동작해야 하는가?'에 초점을 둡니다.\n\n※ 로그 관리나 모니터링 기능 자체를 요구하는 문장은 문맥에 따라 기능적 요구사항으로도 분류될 수 있습니다.\n\n### 비기능적 요구사항 9가지 유형\n\n| 유형 | 의미 | 핵심 키워드 |\n| --- | --- | --- |\n| 신뢰성 | 오류 없이 정확하고 안정적으로 동작하는 정도 | 고장, 오류, 장애 발생률 |\n| 가용성 | 필요할 때 시스템을 사용할 수 있는 정도 | 가동률, 24시간 서비스 |\n| 운영 | 시스템 운영 및 관리에 관한 조건 | 로그, 모니터링, 운영 관리 |\n| 유지보수성 | 오류 수정 및 기능 개선의 용이성 | 수정, 개선, 유지보수 |\n| 자원 | 필요한 자원 및 사용량에 관한 조건 | CPU, 메모리, 저장 공간 |\n| 성능 | 처리 속도 및 처리량에 관한 조건 | 응답 시간, 처리량, 처리 속도 |\n| 이식성 | 다른 환경에서 실행할 수 있는 정도 | 운영체제, 플랫폼 변경 |\n| 보안 | 시스템과 데이터를 위협으로부터 보호하는 정도 | 암호화, 인증, 접근 통제 |\n| 품질 | 요구되는 품질 기준을 충족하는 정도 | 품질 기준, 품질 평가 |\n\n※ 이 9개 항목은 본 모의고사의 보기 기준으로 정리한 것입니다. 표준에 따라 분류 체계는 다를 수 있습니다. 예를 들어 ISO/IEC 25010에서는 가용성을 신뢰성과 관련된 하위 특성으로 다룹니다.\n\n### 헷갈리기 쉬운 유형 비교\n\n<b>1. 신뢰성 vs 가용성</b>\n\n- 신뢰성: 고장이나 오류 없이 정상적으로 동작하는가? 예: 장애 발생률 0.01% 이하\n- 가용성: 필요할 때 이용할 수 있는가? 예: 시스템 가동률 99.9% 이상\n- 암기: 신뢰성 = 고장 없이 / 가용성 = 사용 가능\n\n<b>2. 운영 vs 유지보수성</b>\n\n- 운영: 현재 시스템을 관리·감시하는 것. 예: 로그 기록, 운영 상태 모니터링\n- 유지보수성: 시스템을 수정·개선하기 쉬운 것. 예: 버그 수정, 코드 변경\n- 암기: 운영 = 관리·감시 / 유지보수성 = 수정·개선\n\n<b>3. 자원 vs 성능</b>\n\n- 자원: CPU, 메모리 등 자원 사용량에 관한 조건. 예: 메모리 사용량 2GB 이하\n- 성능: 처리 시간·속도·처리량에 관한 조건. 예: 응답 시간 2초 이내\n- 암기: 자원 = CPU·메모리 / 성능 = 시간·속도\n\n※ CPU·메모리 사용량도 성능 평가에 활용될 수 있으므로 문장에서 무엇을 제한·측정하는지 확인합니다.\n\n### 시험장에서 이렇게 보면 됩니다\n\n- 로그·모니터링 → <b>운영</b>\n- CPU·메모리·저장 공간 → <b>자원</b>\n- 응답 시간·처리 속도 → <b>성능</b>\n- 오류·고장 → <b>신뢰성</b>\n- 가동률·서비스 이용 가능 → <b>가용성</b>\n- 수정·개선 → <b>유지보수성</b>\n- 다른 운영체제·플랫폼 → <b>이식성</b>\n- 암호화·접근 통제 → <b>보안</b>\n\n<b>출제 패턴:</b> 설명에서 핵심 단어를 찾아 유형을 연결하는 암기형 문제입니다. 특히 운영·자원·성능, 신뢰성·가용성을 구별하세요."
+    },
+    {
+      "id": "practical-2026-1-5",
+      "number": 5,
+      "promptMarkdown": "다음 용어의 영문 약자를 쓰시오.\n\n- 정보보호 관리체계",
+      "answerMarkdown": "ISMS",
+      "explanationMarkdown": ""
+    },
+    {
+      "id": "practical-2026-1-6",
+      "number": 6,
+      "promptMarkdown": "HDLC는 비트 중심의 데이터 링크 제어 프로토콜로, 프레임 단위로 데이터를 전송하며 흐름 제어 및 오류 복구 기능을 제공한다. 다음 설명을 읽고 알맞은 용어를 쓰시오.\n\n<b>HDLC 구성 요소</b>\n\n1. HDLC 프레임의 구성 단위로, 실제 사용자 데이터를 전송하는 프레임\n2. 데이터 링크의 흐름을 관리하고 오류 제어 및 통신 상태를 감시하는 프레임\n3. 순서 번호 없이 링크 설정, 해제, 모드 설정 등 제어 기능을 수행하는 프레임\n4. 두 국(Station)이 동등한 위치에서 서로 명령과 응답을 주고받는 모드\n5. 종국(Secondary)이 주국(Primary)의 허가 없이도 자발적으로 응답을 전송할 수 있는 모드",
+      "answerMarkdown": "1. 정보\n2. 감독\n3. 비번호\n4. 비동기 균형 모드\n5. 비동기 응답 모드",
+      "explanationMarkdown": "### HDLC 개념\n\n<b>HDLC(High-level Data Link Control, 고급 데이터 링크 제어)</b>는 데이터 링크 계층에서 프레임 단위로 데이터를 전송하며 흐름 제어와 오류 제어를 수행하는 비트 중심 프로토콜입니다.\n\n- <b>프레임(I/S/U)</b>: 무슨 목적으로 데이터를 주고받는가?\n- <b>동작 모드(NRM/ARM/ABM)</b>: 두 국이 어떤 관계로 통신하는가?\n\n### HDLC 프레임 종류\n\n| 종류 | 영문 | 역할·핵심 키워드 |\n| --- | --- | --- |\n| 정보 프레임(I) | Information | 실제 사용자 데이터 전송, 송수신 순서 번호 |\n| 감독 프레임(S) | Supervisory | 흐름 제어, 오류 제어, 수신 확인·재전송 요청 |\n| 비번호 프레임(U) | Unnumbered | 링크 설정·해제, 모드 설정, 일반적인 송수신 순서 번호 없음 |\n\n- <b>정보(I)</b>: 사용자 메시지 등 실제 데이터를 전달합니다.\n- <b>감독(S)</b>: 전송 상태를 관리합니다. 수신 확인, 흐름 제어, 재전송 요청 등이 해당합니다.\n- <b>비번호(U)</b>: 링크 설정·해제 및 통신 모드 변경 등의 제어를 합니다.\n\n<b>암기:</b> I = 데이터 전송 / S = 흐름·오류 관리 / U = 링크 관리\n\n### 주국·종국·복합국\n\n- <b>주국(Primary)</b>: 링크를 제어하며 명령을 내리는 국.\n- <b>종국(Secondary)</b>: 주국의 제어에 따라 응답하는 국.\n- <b>복합국(Combined)</b>: 명령과 응답을 모두 수행할 수 있는 국.\n\n### HDLC 동작 모드 3가지\n\n| 모드 | 영문 명칭 | 핵심 특징 |\n| --- | --- | --- |\n| NRM 정규 응답 모드 | Normal Response Mode | 종국은 주국의 허가를 받아 전송, 불균형 구성 |\n| ARM 비동기 응답 모드 | Asynchronous Response Mode | 종국이 주국의 명시적 허가 없이 전송 가능, 주국·종국 구분 유지 |\n| ABM 비동기 균형 모드 | Asynchronous Balanced Mode | 동등한 두 복합국이 명령·응답을 주고받음, 균형 구성 |\n\n- <b>NRM</b>: 주국 → 허가 → 종국 전송. 핵심은 '허가 필요'.\n- <b>ARM</b>: 종국이 허가 없이 전송 가능하지만 주국·종국의 역할은 구분됨.\n- <b>ABM</b>: 양쪽 복합국이 동등하게 명령과 응답을 주고받음.\n\n<b>ARM vs ABM:</b> '허가 없이'라는 표현만으로 결정하지 말고 <b>종국</b>인지 <b>동등한 두 국</b>인지 살펴봅니다.\n\n### HDLC 프레임 기본 구조 (추가 암기)\n\nFlag → Address → Control → Information → FCS → Flag\n\n- <b>Flag</b>: 프레임의 시작과 끝을 구분(비트 패턴 01111110).\n- <b>Address</b>: 주소 정보.\n- <b>Control</b>: 프레임 종류 및 제어 정보.\n- <b>Information</b>: 사용자 데이터 등(프레임 종류에 따라 없을 수 있음).\n- <b>FCS(Frame Check Sequence)</b>: 전송 오류 검출.\n\n※ 이번 문제에서는 프레임 내부 구조보다 I·S·U와 NRM·ARM·ABM을 우선 암기합니다.\n\n### 시험장에서 이렇게 보면 됩니다\n\n- 사용자 데이터 → <b>정보 프레임(I)</b>\n- 흐름 제어·오류 제어 → <b>감독 프레임(S)</b>\n- 링크 설정·해제·모드 설정 → <b>비번호 프레임(U)</b>\n- 주국 허가 필요 → <b>정규 응답 모드(NRM)</b>\n- 종국이 허가 없이 전송 → <b>비동기 응답 모드(ARM)</b>\n- 두 국이 동등한 관계 → <b>비동기 균형 모드(ABM)</b>\n\n<b>출제 패턴:</b> 설명 속 '데이터 전송/오류 제어/링크 설정'과 '허가 필요/종국 허가 없이/동등한 관계'를 찾아 용어를 매칭합니다."
+    },
+    {
+      "id": "practical-2026-1-7",
+      "number": 7,
+      "promptMarkdown": "다음은 Java 코드에 대한 문제이다. 아래 코드를 확인하여 알맞는 출력값을 작성하시오.\n\n```java\nclass A {\n    String f(Object x) {\n        return \"1\";\n    }\n\n    String g() {\n        return f(\"a\");\n    }\n}\n\nclass B extends A {\n    String f(Object x) {\n        return \"2\";\n    }\n\n    String f(String x) {\n        return \"3\";\n    }\n}\n\npublic class Main {\n    public static void main(String[] args) {\n        A a = new B();\n        System.out.println(a.g());\n    }\n}\n```",
+      "answerMarkdown": "2",
+      "explanationMarkdown": "### 풀이 및 복습 — String과 Object, 오버로딩·오버라이딩\n\n<b>String → Object 자동 형변환</b>\n\n- String은 Object의 자식 클래스이므로 문자열 \"a\"를 Object 매개변수에 전달할 수 있습니다.\n- Object → String은 명시적 형변환이 필요하고 실제 객체 타입도 맞아야 합니다.\n\n<b>실행 순서</b>\n\n1. A a = new B(); : 참조 타입 A, 실제 객체 B.\n2. a.g() : B에 g() 재정의가 없으므로 A에 정의된 g() 실행.\n3. f(\"a\") : A의 g() 내부에서는 A의 f(Object)가 선택됨. String은 Object에 전달 가능.\n4. 실제 객체 B에서 f(Object)를 오버라이딩했으므로 B의 f(Object)가 실행되어 \"2\" 반환.\n5. 최종 출력: <b>2</b>\n\n<b>왜 f(String)이 아닌가?</b> B에만 추가된 f(String)은 A의 g()에서 메서드 선택 후보가 아닙니다. 오버로딩은 호출 위치에서 컴파일 시 결정하고, 오버라이딩은 실제 객체를 기준으로 실행됩니다.\n\n<b>시험장에서 이렇게 보면 됩니다:</b> 매개변수 형태부터 선택한 뒤, 실제 객체의 오버라이딩을 확인하세요."
+    },
+    {
+      "id": "practical-2026-1-8",
+      "number": 8,
+      "promptMarkdown": "아래 파이썬 코드가 있다. 입력값으로 HumanDev를 주었을 때 출력되는 결과를 쓰시오.\n\n```py\ni = input()\nx = []\n\nfor word in i.split():\n    x.append(word)\n\ny = ''.join(x)\nz = ''.join(c for c in y[::-1] if c not in 'ong')\n\nprint(z)\n```",
+      "answerMarkdown": "veDamuH",
+      "explanationMarkdown": ""
+    },
+    {
+      "id": "practical-2026-1-9",
+      "number": 9,
+      "promptMarkdown": "아래 조건을 참고하여 각 SQL 구문을 실행했을 때 반환되는 행(Row)의 수를 쓰시오. (단, DEPT 칼럼은 학과명이다.)\n\n<b>테이블 조건</b>\n\nSTUDENT 테이블에는 다음 세 학과의 학생 정보가 저장되어 있다.\n\n컴퓨터과 50명 · 인터넷과 100명 · 사무자동화과 50명\n\n<b>SQL 구문</b>\n\n```sql\n1. SELECT DEPT FROM STUDENT;\n\n2. SELECT DISTINCT DEPT FROM STUDENT;\n\n3. SELECT COUNT(DISTINCT DEPT) FROM STUDENT\n   WHERE DEPT = '컴퓨터과';\n```",
+      "answerMarkdown": "1. 200\n2. 3\n3. 1",
+      "explanationMarkdown": ""
+    },
+    {
+      "id": "practical-2026-1-10",
+      "number": 10,
+      "promptMarkdown": "아래는 선수(PLAYER) 정보를 관리하는 테이블을 정의하는 SQL 문이다. 팀(TEAM) 테이블의 특정 칼럼을 참조하는 외래키 제약 조건을 추가하려 할 때, 괄호 ①\\~⑤에 들어갈 적절한 예약어(keyword) 또는 칼럼명을 아래 조건을 참고하여 쓰시오.\n\n<b>조건</b>\n\n- 외래키 제약 조건의 이름은 TEAM\\_TF로 지정한다.\n- PLAYER 테이블의 TEAM\\_ID 칼럼이 외래키 역할을 한다.\n- TEAM 테이블의 TEAM\\_ID2 칼럼을 참조 대상으로 한다.\n\n<b>SQL 문</b>\n\n```sql\nCREATE TABLE PLAYER (\n    PLAYER_ID CHAR(7) NOT NULL,\n    PLAYER_NAME VARCHAR2(20) NOT NULL,\n    TEAM_ID CHAR(3) NOT NULL,\n    PRIMARY KEY (PLAYER_ID),\n    ( 1 ) TEAM_TF\n    ( 2 ) KEY ( 3 )\n    ( 4 ) TEAM ( 5 )\n);\n```",
+      "answerMarkdown": "① CONSTRAINT\n\n② FOREIGN\n\n③ TEAM\\_ID\n\n④ REFERENCES\n\n⑤ TEAM\\_ID2",
+      "explanationMarkdown": ""
+    },
+    {
+      "id": "practical-2026-1-11",
+      "number": 11,
+      "promptMarkdown": "두 호스트 a, b의 IP 주소와 서브넷 마스크가 주어졌을 때, 각 호스트가 속한 네트워크 주소를 CIDR 표기법으로 쓰시오.\n\n<b>조건</b>\n\n- 호스트 a의 IP 주소: 192.168.11.20\n- 호스트 b의 IP 주소: 192.168.12.200\n- 서브넷 마스크: 255.255.254.0\n\n<b>구하는 것</b>\n\na. 호스트 a (192.168.11.20)가 속한 네트워크 주소\n\nb. 호스트 b (192.168.12.200)가 속한 네트워크 주소",
+      "answerMarkdown": "a. 192.168.10.0/23\n\nb. 192.168.12.0/23",
+      "explanationMarkdown": "### 풀이 및 복습 — CIDR 표기법과 네트워크 주소\n\n<b>1. CIDR 표기법</b>\n\n- IP 주소 뒤에 /숫자를 붙여 <b>네트워크 비트 수</b>를 나타냅니다. 예: 192.168.1.0/24 = 네트워크 비트 24개.\n- 같은 정보를 서브넷 마스크로 표기할 수도 있습니다. 예: /24 = 255.255.255.0, /23 = 255.255.254.0.\n- 이진수 표기는 마스크를 0과 1로 표시하는 방식입니다. 클래스 A·B·C는 과거의 주소 분류 방식입니다.\n\n<b>2. 문제 풀이</b>\n\n- 마스크 255.255.254.0 = 11111111.11111111.11111110.00000000 → 네트워크 비트 <b>23개</b>, 호스트 비트 <b>9개</b> → /23.\n- 3번째 옥텟의 호스트 비트는 1개 → 2¹ = 2 → 네트워크 구간이 <b>0\\~1, 2\\~3, 4\\~5, …, 10\\~11, 12\\~13</b>처럼 2씩 묶입니다.\n- a의 3번째 옥텟 11은 10\\~11 구간 → <b>192.168.10.0/23</b>.\n- b의 3번째 옥텟 12는 12\\~13 구간 → <b>192.168.12.0/23</b>.\n- 4번째 옥텟은 마스크가 0이므로 8비트 전체가 호스트 영역(0\\~255). <b>네트워크 주소에서는 호스트 비트를 모두 0</b>으로 만들기 때문에 마지막 옥텟은 0입니다.\n\n<b>3. 시험장에서 이렇게 보면 됩니다</b>\n\n- 빠른 계산: <b>256 − 254 = 2</b> → 3번째 옥텟의 네트워크 구간 크기는 2.\n- IP가 포함된 구간의 <b>시작값</b>을 네트워크 주소에 적고, 나머지 호스트 비트를 0으로 만듭니다.\n- 마스크의 1비트 총합을 /숫자로 붙이면 CIDR 표기가 완성됩니다."
+    },
+    {
+      "id": "practical-2026-1-12",
+      "number": 12,
+      "promptMarkdown": "다음은 C언어에 대한 문제이다. 아래 코드를 확인하여 알맞는 출력값을 작성하시오.\n\n```c\nstruct fns {\n    int* (*fn)(int*);\n} mine;\n\nint* dummy(int *d) {\n    return d + 1;\n}\n\nint main() {\n    struct fns mine;\n    int n[] = {16, 32};\n    mine.fn = dummy;\n    printf(\"%x\", *mine.fn(n));\n    return 0;\n}\n```",
+      "answerMarkdown": "20",
+      "explanationMarkdown": "### 풀이 및 복습 — 함수 포인터, 역참조, 16진수\n\n<b>1. 변수와 선언 해석</b>\n\n- <code>int n[] = {16, 32}</code>: n\\[0\\]=16, n\\[1\\]=32인 배열.\n- <code>fn</code>: 구조체에 저장된 <b>함수 포인터</b>. <code>dummy</code> 함수를 가리키도록 지정합니다.\n- <code>int *d</code>: 배열의 첫 번째 원소 주소를 받는 포인터.\n- <code>int* dummy(int *d)</code>: int 포인터를 받아 int 포인터를 반환하는 함수.\n\n<b>2. </b><b><code>int* (*fn)(int*)</code></b><b> 읽는 순서</b>\n\n1. 이름 <code>fn</code>부터 확인.\n2. <code>(*fn)</code> → fn 자체가 포인터.\n3. 뒤의 <code>(int*)</code> → 가리키는 함수의 매개변수가 int 포인터.\n4. 앞의 <code>int*</code> → 함수가 반환하는 값도 int 포인터.\n\n- 비교: <code>int *p;</code> = 일반 포인터 / <code>int *f(int);</code> = 포인터를 반환하는 함수 / <code>int (*f)(int);</code> = int를 반환하는 함수 포인터 / <code>int *(*f)(int *);</code> = 포인터를 반환하는 함수 포인터.\n\n<b>3. 별표(\\*)의 의미</b>\n\n- 선언에서 <code>int *p</code>와 <code>int* p</code>는 동일합니다. 별표를 자료형 쪽에 붙여 쓰는지 변수 쪽에 붙여 쓰는지는 의미 차이가 없습니다.\n- 식에서 <code>*p</code>는 p가 가리키는 값을 꺼내는 <b>역참조</b>입니다.\n- <code>int *(*fn)(int *)</code>의 별표 3개는 각각 <b>반환값이 포인터 / fn이 함수 포인터 / 매개변수가 포인터</b>라는 뜻입니다.\n\n<b>4. 실행 흐름과 출력</b>\n\n1. <code>mine.fn = dummy;</code> → fn을 통해 dummy 호출 가능.\n2. <code>mine.fn(n)</code> → dummy(n). d는 n\\[0\\]의 주소를 가리킴.\n3. <code>return d + 1;</code> → 정수 16에 1을 더하는 게 아니라 <b>다음 원소 n\\[1\\]의 주소</b>를 반환.\n4. <code>*mine.fn(n)</code> → 반환된 주소를 역참조 → n\\[1\\] 값 <b>32</b>.\n5. <code>printf(\"%x\", 32)</code> → 10진수 32를 16진수로 표시 → <b>20</b>.\n\n<b>5. 보충</b>\n\n- <code>%d</code>는 10진수(32), <code>%x</code>는 16진수(20), <code>%o</code>는 8진수(40) 출력.\n- 구조체 선언 끝의 전역 <code>mine</code>과 main 안의 지역 <code>mine</code>은 별개이며, main에서는 지역 변수가 사용됩니다.\n\n<b>시험장에서 이렇게 보면 됩니다:</b> 출력문의 <code>%x</code> 확인 → <code>mine.fn = dummy</code> 확인 → <code>d+1</code>로 다음 원소 이동 → <code>*</code>로 값 32 추출 → 16진수 <b>20</b> 출력. 특히 <code>(*fn)</code> 형태는 함수 포인터, <code>*(p+1)</code>은 다음 원소의 값이라는 패턴을 기억하세요."
+    },
+    {
+      "id": "practical-2026-1-13",
+      "number": 13,
+      "promptMarkdown": "다음은 파이썬에 대한 문제이다. 아래 코드를 확인하여 알맞는 출력값을 작성하시오.\n\n```py\nlst = list(range(10))\nfor c in lst[::-2]:\n    print(c, end='A')\nprint()\n```",
+      "answerMarkdown": "9A7A5A3A1A",
+      "explanationMarkdown": "### 풀이 및 복습 — range(), 리스트 슬라이싱\n\n<b>1. range()와 list()</b>\n\n- <code>range(10)</code>은 <b>0부터 9까지</b> 총 10개의 숫자를 나타냅니다. 종료값 10은 포함하지 않습니다.\n- <code>list(range(10))</code> → <code>[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]</code>\n- <code>range(시작, 종료, 간격)</code>: 시작 포함, 종료 제외. 예: <code>list(range(1, 10, 2))</code> → <code>[1, 3, 5, 7, 9]</code>.\n\n<b>2. 리스트 슬라이싱</b>\n\n- 형식: <code>lst[시작:종료:간격]</code>\n- <code>lst[::-1]</code>: 마지막 원소부터 1칸씩 역순 → <code>[9,8,7,6,5,4,3,2,1,0]</code>\n- <code>lst[::-2]</code>: 마지막 원소부터 2칸씩 역순 → <code>[9,7,5,3,1]</code>\n- <code>lst[::-3]</code>: 마지막 원소부터 3칸씩 역순 → <code>[9,6,3,0]</code>\n- <code>lst[::2]</code>: 첫 원소부터 2칸씩 정순 → <code>[0,2,4,6,8]</code>\n- 시작·종료를 생략하고 간격이 음수이면 <b>마지막 원소부터</b> 이동합니다. 원래 리스트는 변경되지 않습니다.\n\n<b>3. 문제 실행 흐름</b>\n\n1. <code>lst = list(range(10))</code> → 0\\~9 저장.\n2. <code>lst[::-2]</code> → 9 → 7 → 5 → 3 → 1.\n3. <code>print(c, end='A')</code> → 숫자 뒤에 A를 붙이고 줄바꿈하지 않음.\n4. 마지막 <code>print()</code> → 줄바꿈만 수행.\n\n- <b>최종 출력: </b><b><code>9A7A5A3A1A</code></b>\n\n<b>시험장에서 이렇게 보면 됩니다:</b> <code>range(n)</code>은 0부터 n-1까지이고, <code>[::-1]</code>은 전체 역순, <code>[::-2]</code>는 마지막부터 2칸씩 역순입니다. <code>end='A'</code>는 각 값 뒤에 A를 붙입니다."
+    },
+    {
+      "id": "practical-2026-1-14",
+      "number": 14,
+      "promptMarkdown": "아래 파이썬 코드를 실행했을 때 출력되는 값을 쓰시오.\n\n```py\ndef f(a):\n    m = [[x] for x in a]\n    b = m[:]\n    for i in range(len(b) - 1):\n        b[i+1] += b[i]\n    return sum(len(x) for x in m)\n\nprint(f([1, 2, 3, 4]))\n```",
+      "answerMarkdown": "10",
+      "explanationMarkdown": "### 풀이 및 복습 — 자료형별 덧셈, 얕은 복사, 리스트 누적\n\n<b>1. 자료형에 따라 +와 += 결과가 달라집니다</b>\n\n| 자료형 | 연산 | 결과 |\n| --- | --- | --- |\n| 숫자(int) | 20 + 10 | 30 (숫자 덧셈) |\n| 문자열(str) | \"20\" + \"10\" | \"2010\" (문자열 연결) |\n| 리스트(list) | \\[20\\] + \\[10\\] | \\[20, 10\\] (리스트 연결) |\n\n- <code>a = [10, 20]</code>이면 <code>a[1] += a[0]</code> → 20 + 10 = 30.\n- <code>a = [[10], [20]]</code>이면 <code>a[1] += a[0]</code> → \\[20\\] 뒤에 \\[10\\]을 붙여 \\[20, 10\\].\n- <b>대괄호가 보이는지가 아니라, 인덱스로 꺼낸 실제 값의 자료형</b>을 먼저 확인합니다.\n- C/Java의 문자 <code>'A' + 1</code>은 문자 코드값 계산 결과 66이며, 문자 형식으로 변환·출력하면 B입니다. Python의 <code>'A' + 1</code>은 TypeError이고 <code>chr(ord('A') + 1)</code>을 사용해야 합니다.\n\n<b>2. 얕은 복사와 중첩 리스트</b>\n\n- <code>m = [[x] for x in a]</code> → <code>[[1], [2], [3], [4]]</code>. 각 숫자가 내부 리스트로 감싸집니다.\n- <code>b = m[:]</code>은 <b>얕은 복사</b>입니다. 바깥 리스트 b는 새로 생성되지만, 내부 리스트는 m과 공유합니다.\n- <code>b = m</code>이면 바깥 리스트까지 같은 객체를 참조합니다.\n- 따라서 <code>b[i+1] += b[i]</code>가 내부 리스트를 직접 늘리면 m에서 보이는 내부 리스트도 변경됩니다.\n- <b>깊은 복사(Deep Copy)</b>는 바깥 리스트뿐 아니라 내부 리스트도 새로 만들어 원본과 공유하지 않습니다.\n- 사용법: <code>import copy</code> 후 <code>b = copy.deepcopy(m)</code>.\n- 예: <code>m = [[1], [2]]</code>이고 <code>b = copy.deepcopy(m)</code>인 상태에서 <code>b[1] += b[0]</code>을 실행하면 <b>b = \\[\\[1\\], \\[2,1\\]\\]</b>, <b>m = \\[\\[1\\], \\[2\\]\\]</b>로 원본은 바뀌지 않습니다.\n- 비교: <code>b = m</code>은 같은 리스트 참조 / <code>b = m[:]</code>은 바깥 리스트만 복사(내부 공유) / <code>b = copy.deepcopy(m)</code>은 내부까지 복사(독립).\n- <b>14번 문제에 깊은 복사를 적용하면?</b> <code>b[i+1] += b[i]</code>로 b만 바뀌고 m은 <code>[[1], [2], [3], [4]]</code> 그대로이므로 <code>sum(len(x) for x in m)</code>은 <b>4</b>가 됩니다. 실제 문제의 얕은 복사는 <b>10</b>입니다.\n- 참고: 내부 원소가 변경 불가능한 숫자만 있는 단순 1차원 리스트라면 얕은 복사도 요소 변경을 독립적으로 다룰 수 있습니다.\n\n<b>3. 실제 반복문 실행</b>\n\n- <code>len(b) = 4</code> → <code>range(len(b)-1) = range(3)</code> → i는 0, 1, 2.\n\n| 단계 | 연산 | m의 상태 (b도 같은 내부 리스트 공유) |\n| --- | --- | --- |\n| 초기 | — | \\[\\[1\\], \\[2\\], \\[3\\], \\[4\\]\\] |\n| i=0 | b\\[1\\] += b\\[0\\] | \\[\\[1\\], \\[2,1\\], \\[3\\], \\[4\\]\\] |\n| i=1 | b\\[2\\] += b\\[1\\] | \\[\\[1\\], \\[2,1\\], \\[3,2,1\\], \\[4\\]\\] |\n| i=2 | b\\[3\\] += b\\[2\\] | \\[\\[1\\], \\[2,1\\], \\[3,2,1\\], \\[4,3,2,1\\]\\] |\n\n<b>4. 반환값과 최종 출력</b>\n\n- <code>sum(len(x) for x in m)</code>은 m의 각 내부 리스트 길이를 합산합니다.\n- 길이: 1 + 2 + 3 + 4 = <b>10</b> → 최종 출력 <b>10</b>.\n\n<b>5. 시험장에서 이렇게 보면 됩니다</b>\n\n1. <code>[[x] for x in a]</code>를 보면 먼저 <b>중첩 리스트</b>를 적습니다.\n2. <code>m[:]</code>을 보면 <b>바깥 리스트만 복사, 내부 리스트 공유</b>에 표시합니다.\n3. <code>+=</code>에서는 왼쪽과 오른쪽 원소의 <b>자료형</b>을 먼저 확인합니다. 리스트라면 원소가 이어 붙습니다.\n4. <code>range(3)</code>으로 3회 추적한 뒤 <code>sum(len(...))</code>으로 길이를 합칩니다.\n\n<b>정처기 패턴:</b> 리스트 슬라이싱 얕은 복사 + 공유된 내부 리스트 수정 + 리스트 <code>+=</code> + 내부 리스트 길이 합산."
+    },
+    {
+      "id": "practical-2026-1-15",
+      "number": 15,
+      "promptMarkdown": "다음은 특정 공격 기법에 대한 설명이다. 아래 내용을 읽고 해당하는 공격 기법을 \\[보기\\]에서 골라 쓰시오.\n\n원본 데이터 파일은 별도로 존재하며, 공격자는 해당 파일의 경로를 가리키는 특수 파일을 생성한다. 프로그램이 임시 파일을 생성하는 순간을 틈타 해당 임시 파일을 미리 준비한 특수 파일로 교체한다. 이후 프로그램이 임시 파일의 존재를 확인하면 교체된 파일을 정상으로 인식하고 동작하게 된다.\n\n<b>공격 절차</b>\n\n1. 공격자는 실제 파일이 아닌, 특정 파일의 경로를 참조하는 특수 파일을 미리 준비한다.\n2. 프로그램이 임시 파일을 생성하는 시점을 노려 해당 임시 파일을 준비한 특수 파일로 교체한다.\n3. 프로그램이 임시 파일의 존재 여부를 확인할 때, 조건에 부합하면 정상으로 판단하고 동작하며 부합하지 않으면 임시 파일을 삭제한다.\n\n<b>\\[보기\\]</b>\n\n하드링크 / 심볼릭링크 / 소프트링크 / 정적링크 / 동적링크",
+      "answerMarkdown": "심볼릭링크",
+      "explanationMarkdown": ""
+    },
+    {
+      "id": "practical-2026-1-16",
+      "number": 16,
+      "promptMarkdown": "다음은 특정 보안 공격 기법에 대한 설명이다. 해당하는 공격 기법의 명칭을 쓰시오.\n\n공격자는 목표 대상이 업무 또는 관심사로 인해 자주 방문하는 합법적인 웹사이트를 사전에 파악한다.\n\n해당 사이트에 악성코드를 삽입하여 감염시켜 놓고, 피해자가 해당 사이트에 접속하는 순간 피해자의 시스템에 악성 프로그램이 자동으로 설치되도록 유도한다. 공격자는 불특정 다수를 노리는 것이 아니라 특정 조직이나 인물을 겨냥하며, 접속자의 IP나 환경 조건을 확인하여 목표 대상에게만 선택적으로 악성코드가 실행되도록 설계하는 경우도 있다.\n\n피해자는 정상적인 사이트를 방문했을 뿐이므로 감염 사실을 인지하기 어렵다는 특징이 있다.",
+      "answerMarkdown": "워터링 홀 (Watering Hole)",
+      "explanationMarkdown": ""
+    },
+    {
+      "id": "practical-2026-1-17",
+      "number": 17,
+      "promptMarkdown": "다음은 Java 코드에 대한 문제이다. 아래 코드를 확인하여 알맞는 출력값을 작성하시오.\n\n```java\npublic class Main {\n    public static void main(String[] args) {\n        int x1 = 9;\n        int x2 = 2;\n        String x3 = \"3\";\n        System.out.println(x1 + x2 + \"2\" + x3);\n    }\n}\n```",
+      "answerMarkdown": "1123",
+      "explanationMarkdown": ""
+    },
+    {
+      "id": "practical-2026-1-18",
+      "number": 18,
+      "promptMarkdown": "다음은 SQL에 대한 문제이다. 아래 코드를 확인하여 알맞는 출력값을 작성하시오.\n\n<b>employee 테이블</b>\n\n| dep\\_id |\n| --- |\n| 10 |\n| 20 |\n| 20 |\n\n<b>dept 테이블</b>\n\n| dept\\_id | budget |\n| --- | --- |\n| 10 | 100 |\n| 20 | 300 |\n| 30 | 200 |\n\n<b>SQL 문</b>\n\n```sql\nSELECT COUNT(*)\nFROM employee e\nJOIN dept d ON e.dep_id = d.dept_id\nWHERE d.budget > (\n    SELECT AVG(budget) FROM dept\n);\n```",
+      "answerMarkdown": "2",
+      "explanationMarkdown": "### 풀이 및 복습 — JOIN, AVG, WHERE, COUNT\n\n<b>1. SQL 문법 해석</b>\n\n- <code>FROM employee e</code>: employee 테이블 별칭은 e(왼쪽).\n- <code>JOIN dept d</code>: dept 테이블 별칭은 d(오른쪽). <b>JOIN만 작성하면 INNER JOIN</b>입니다.\n- <code>ON e.dep_id = d.dept_id</code>: 두 테이블에서 부서 번호가 같은 행끼리 연결합니다.\n- <code>SELECT AVG(budget) FROM dept</code>: dept 예산 평균 = (100+300+200)/3 = <b>200</b>.\n- <code>WHERE d.budget > 200</code>: JOIN 결과 중 200보다 큰 예산의 행만 남깁니다.\n- <code>COUNT(*)</code>: 최종 행 수를 셉니다. <b>같은 값이 여러 번 있어도 각각 계산</b>합니다.\n\n<b>2. 실제 문제 풀이 — INNER JOIN</b>\n\n| e.dep\\_id | d.dept\\_id | d.budget | WHERE budget > 200 |\n| --- | --- | --- | --- |\n| 10 | 10 | 100 | 제외 |\n| 20 | 20 | 300 | 포함 |\n| 20 | 20 | 300 | 포함 |\n\n- employee에 20이 <b>두 행</b> 있으므로 dept의 부서 20과 각각 결합하여 300도 두 행이 됩니다.\n- 평균은 200이지만 조건을 만족하는 <b>JOIN 결과 행은 2개</b>입니다.\n- <b>정답: 2</b> (참고: <code>COUNT(DISTINCT d.dept_id)</code>였다면 1).\n\n<b>3. JOIN 네 가지 비교 (같은 원본 테이블 사용)</b>\n\n- <b>INNER JOIN (또는 JOIN)</b>: 양쪽에 일치하는 행만 유지.\n- <b>LEFT JOIN</b>: 왼쪽 employee의 모든 행 유지. 오른쪽에 일치 항목이 없다면 d열이 NULL.\n- <b>RIGHT JOIN</b>: 오른쪽 dept의 모든 행 유지. 왼쪽에 일치 항목이 없다면 e열이 NULL.\n- <b>FULL OUTER JOIN</b>: 양쪽 모든 행 유지. 일치하지 않는 쪽 열은 NULL.\n\n<b>INNER JOIN 결과 / LEFT JOIN 결과</b>\n\n| e.dep\\_id | d.dept\\_id | d.budget |\n| --- | --- | --- |\n| 10 | 10 | 100 |\n| 20 | 20 | 300 |\n| 20 | 20 | 300 |\n\n- 이 문제에서는 employee의 모든 행이 dept와 일치하므로 INNER JOIN과 LEFT JOIN의 결과가 같습니다(3행).\n\n<b>RIGHT JOIN 결과 / FULL OUTER JOIN 결과</b>\n\n| e.dep\\_id | d.dept\\_id | d.budget |\n| --- | --- | --- |\n| 10 | 10 | 100 |\n| 20 | 20 | 300 |\n| 20 | 20 | 300 |\n| NULL | 30 | 200 |\n\n- dept의 30은 employee에 없으므로 e.dep\\_id가 NULL인 행이 추가됩니다. employee에는 일치하지 않는 행이 없어 RIGHT와 FULL 결과가 같습니다(4행).\n\n<b>4. JOIN 직후 vs WHERE 적용 후 COUNT(\\*)</b>\n\n| JOIN 종류 | JOIN 직후 | budget > 200 적용 후 |\n| --- | --- | --- |\n| INNER JOIN | 3행 | 2행 |\n| LEFT JOIN | 3행 | 2행 |\n| RIGHT JOIN | 4행 | 2행 |\n| FULL OUTER JOIN | 4행 | 2행 |\n\n- 부서 30의 예산은 200이므로 <code>> 200</code> 조건에서 제외됩니다. 따라서 이 데이터에서는 네 JOIN의 최종 결과가 모두 2입니다.\n\n<b>5. 시험장에서 이렇게 보면 됩니다</b>\n\n1. <code>JOIN</code> 앞에 INNER/LEFT/RIGHT/FULL이 있는지 먼저 확인합니다. <b>그냥 JOIN = INNER JOIN</b>.\n2. <code>ON</code>의 연결 조건을 적용합니다. 중복 일치 행을 임의로 지우지 않습니다.\n3. 서브쿼리 <code>AVG</code> 결과(200)를 구해 WHERE 조건에 대입합니다.\n4. 남은 행의 수를 <code>COUNT(*)</code>로 셉니다.\n\n<b>핵심 패턴:</b> JOIN → WHERE → COUNT(<i>) 순서. \\`COUNT(</i>)<code>는 부서 종류 수가 아닌 **결과 행 수**이며, </code>DISTINCT\\`가 있어야 중복을 제거합니다."
+    },
+    {
+      "id": "practical-2026-1-19",
+      "number": 19,
+      "promptMarkdown": "다음은 통합 테스트에서 사용되는 더미 모듈에 대한 설명이다. 괄호 안에 들어갈 알맞은 용어를 쓰시오.\n\n( 1 ) 은/는 하위 모듈을 대신하여 단순한 결과값만 반환하도록 임시로 작성된 더미 모듈로, 하향식 통합 테스트 수행 시 필요하다.\n\n( 2 ) 은/는 상위 모듈을 대신하여 하위 모듈의 데이터 입력과 출력을 확인하기 위한 더미 모듈로, 상향식 통합 테스트 수행 시 필요하다.",
+      "answerMarkdown": "1. 스텁\n2. 드라이버",
+      "explanationMarkdown": ""
+    },
+    {
+      "id": "practical-2026-1-20",
+      "number": 20,
+      "promptMarkdown": "다음은 응집도의 유형에 대한 설명이다. 괄호 안에 들어갈 알맞은 용어를 쓰시오.\n\n( 1 ) 은/는 모듈이 다수의 관련 기능을 가질 때, 모듈 안의 구성요소들이 그 기능을 순차적으로 수행하는 경우의 응집도이다.\n\n( 2 ) 은/는 동일한 입력과 출력을 사용하여 서로 다른 기능을 수행하는 활동들이 모여 있는 경우의 응집도이다.\n\n( 3 ) 은/는 모듈 내부의 모든 기능이 단일한 목적을 위해 수행되는 경우의 응집도이다.",
+      "answerMarkdown": "1. 절차\n2. 교환\n3. 기능",
+      "explanationMarkdown": ""
+    }
+  ]
+}

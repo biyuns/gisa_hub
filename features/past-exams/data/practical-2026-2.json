@@ -1,0 +1,149 @@
+{
+  "id": "practical-2026-2",
+  "title": "2026년 2회 실기 임시 데이터",
+  "year": 2026,
+  "round": 2,
+  "examType": "practical",
+  "questions": [
+    {
+      "id": "practical-2026-2-1",
+      "number": 1,
+      "promptMarkdown": "다음은 블랙박스 테스트 기법에 대한 설명이다. 괄호 ( ) 안에 들어갈 말을 보기에서 골라 쓰시오.\n\n( )은 프로그램의 입력 조건을 유효한 값과 유효하지 않은 값의 영역으로 나누고, 각 영역을 대표할 수 있는 값을 선정하여 테스트 케이스를 설계하는 명세 기반(블랙박스) 테스트 기법이다.\n\n<b>\\[표\\] 점수별 등급 기준</b>\n\n| 점수 | 등급 |\n| --- | --- |\n| 90 \\~ 100 | A |\n| 80 \\~ 89 | B |\n| 70 \\~ 79 | C |\n| 60 \\~ 69 | D |\n\n위 표에서 테스트 값으로 60을 입력하였을 때, 예상 결과와 실제 결과가 모두 등급 D로 일치하였다. 이는 ( ) 기법을 적용하여 각 등급 구간의 대표값을 테스트한 사례이다.\n\n<b>보기</b>\n\n- ㄱ. 동치분할 (Equivalence Partitioning)\n- ㄴ. 경계값분석 (Boundary Value Analysis)\n- ㄷ. 결정테이블 테스트 (Decision Table Testing)\n- ㄹ. 상태전이 테스트 (State Transition Testing)",
+      "answerMarkdown": "ㄱ. 동치분할 (Equivalence Partitioning)",
+      "explanationMarkdown": ""
+    },
+    {
+      "id": "practical-2026-2-2",
+      "number": 2,
+      "promptMarkdown": "다음은 Java 코드에 대한 문제이다. 아래 코드를 확인하여 알맞는 출력값을 작성하시오.\n\n```java\nclass A {\n\tprivate int a;\n\tpublic A(int a) {\n\t\tthis.a = a;\n\t}\n\tvoid print() {\n\t\tSystem.out.print(a + \"a\");\n\t}\n}\nclass B extends A {\n\tprivate int b;\n\tB(int a, int b) {\n\t\tsuper(a);\n\t\tthis.b = b;\n\t}\n\tvoid print() {\n\t\tsuper.print();\n\t\tSystem.out.print(b + \"b\");\n\t}\n}\npublic class Main {\n\tpublic static void main(String[] args) {\n\t\tB obj = new B(10, 20);\n\t\tobj.print();\n\t}\n}\n```",
+      "answerMarkdown": "10a20b",
+      "explanationMarkdown": ""
+    },
+    {
+      "id": "practical-2026-2-3",
+      "number": 3,
+      "promptMarkdown": "다음은 소프트웨어 모듈 간의 결합도(Coupling)에 대한 설명이다. 괄호 안에 들어갈 말을 보기에서 골라 기호로 쓰시오.\n\n( )는 한 모듈이 다른 모듈 내부에 있는 변수나 기능을 직접 참조하거나 사용하는 경우에 발생하는 결합도로, 결합도 종류 중 결합 강도가 가장 높은 형태이다.\n\n<b>보기</b>\n\n- ㄱ. 자료결합도 (Data Coupling)\n- ㄴ. 스탬프결합도 (Stamp Coupling)\n- ㄷ. 제어결합도 (Control Coupling)\n- ㄹ. 외부결합도 (External Coupling)\n- ㅁ. 내용결합도 (Content Coupling)\n- ㅂ. 공통결합도 (Common Coupling)",
+      "answerMarkdown": "ㅁ. 내용결합도 (Content Coupling)",
+      "explanationMarkdown": ""
+    },
+    {
+      "id": "practical-2026-2-4",
+      "number": 4,
+      "promptMarkdown": "다음은 라우팅 프로토콜에 대한 설명이다. 괄호 안에 들어갈 알맞은 용어를 쓰시오.\n\n( )는 링크 상태(Link State) 알고리즘을 사용하는 대표적인 내부 라우팅 프로토콜(IGP)이다. 다익스트라(Dijkstra) 알고리즘을 이용하여 최단 경로를 탐색하며, 대규모 네트워크에 적합하고 멀티캐스트를 지원한다.",
+      "answerMarkdown": "OSPF (Open Shortest Path First)",
+      "explanationMarkdown": ""
+    },
+    {
+      "id": "practical-2026-2-5",
+      "number": 5,
+      "promptMarkdown": "다음은 파이썬 코드에 대한 문제이다. 아래 코드를 확인하여 알맞는 출력값을 작성하시오.\n\n```py\nclass LocationDict:\n\tlocations = {\n\t\t\"NYC\": \"New York\",\n\t\t\"LON\": \"London\",\n\t\t\"PAR\": \"Paris\",\n\t\t\"TKY\": \"Tokyo\"\n\t}\ntmpdict = LocationDict()\nstr01 = \"\"\nfor key, location in tmpdict.locations.items():\n\tkeyk = key[-1]\n\tlocationk = location[0]\n\tstr01 += keyk + locationk\nprint(str01, end=\"\")\n```",
+      "answerMarkdown": "CNNLRPYT",
+      "explanationMarkdown": ""
+    },
+    {
+      "id": "practical-2026-2-6",
+      "number": 6,
+      "promptMarkdown": "다음은 파이썬 코드에 대한 문제이다. 아래 코드를 확인하여 알맞는 출력값을 작성하시오.\n\n```py\na = \"_THIS_IS_KIM_SPEAKING\"\nb = a[:4]\nc = a[6:8]\nd = a[18:]\ne = b + c + d\nprint(e)\n```",
+      "answerMarkdown": "\\_THISING",
+      "explanationMarkdown": ""
+    },
+    {
+      "id": "practical-2026-2-7",
+      "number": 7,
+      "promptMarkdown": "다음은 C언어 코드에 대한 문제이다. 아래 코드를 확인하여 알맞는 출력값을 작성하시오.\n\n```c\n#include <stdio.h>\ntypedef struct N {\n\tint v;\n\tstruct N* a;\n\tstruct N* b;\n} N;\nint c = 0;\nint ans = 0;\nvoid pst(N *n) {\n\tif (!n) return;\n\tpst(n->a);\n\tpst(n->b);\n\tif (++c == 3) ans = n->v;\n}\nint main() {\n\tN ne = {35, 0, 0};\n\tN nd = {64, 0, 0};\n\tN nc = {53, 0, 0};\n\tN nb = {12, &ne, &nc};\n\tN na = {21, &nb, &nd};\n\tpst(&na);\n\tprintf(\"%d\\n\", ans);\n\treturn 0;\n}\n```",
+      "answerMarkdown": "12",
+      "explanationMarkdown": "### 풀이 및 복습 — 구조체 포인터, 재귀함수, 후위 순회\n\n<b>1. 변수 역할</b>\n\n- <code>v</code>: 노드에 저장된 숫자, <code>a</code>: 왼쪽 자식 포인터, <code>b</code>: 오른쪽 자식 포인터.\n- <code>n</code>: 현재 탐색하는 노드의 포인터, <code>c</code>: 방문한 노드 수, <code>ans</code>: 세 번째 방문 노드의 값.\n- <code>n->a</code>는 <code>(*n).a</code>와 같으며, <code>&ne</code>는 ne의 주소를 의미합니다.\n\n<b>2. 노드 연결 관계</b>\n\n- <code>na(21)</code>의 왼쪽은 <code>nb(12)</code>, 오른쪽은 <code>nd(64)</code>.\n- <code>nb(12)</code>의 왼쪽은 <code>ne(35)</code>, 오른쪽은 <code>nc(53)</code>.\n- 트리 모양: 21 → 왼쪽 12(왼쪽 35, 오른쪽 53), 오른쪽 64.\n\n<b>3. 재귀함수 실행 순서</b>\n\n- <code>if (!n) return;</code>: 포인터가 NULL이면 탐색 종료.\n- <code>pst(n->a);</code> → 왼쪽 자식의 재귀 탐색을 <b>끝까지 수행</b>.\n- <code>pst(n->b);</code> → 오른쪽 자식의 재귀 탐색을 끝까지 수행.\n- <code>if (++c == 3) ans = n->v;</code> → 마지막에 현재 노드 처리.\n- 따라서 <b>왼쪽 → 오른쪽 → 현재 노드</b> 순서인 <b>후위 순회(Postorder)</b>입니다.\n\n<b>4. 실제 값 변화</b>\n\n| 방문 순서 | n->v | ++c | ans |\n| --- | --- | --- | --- |\n| 1 | 35 | 1 | 0 |\n| 2 | 53 | 2 | 0 |\n| 3 | 12 | 3 | 12 |\n| 4 | 64 | 4 | 12 |\n| 5 | 21 | 5 | 12 |\n\n- <code>++c</code>는 먼저 증가한 뒤 3과 비교하므로 세 번째 노드(12)에서 <code>ans=12</code>가 됩니다.\n- <code>c++ == 3</code>이었다면 먼저 비교하고 증가하므로 네 번째 노드(64)에서 조건이 참이 됩니다.\n\n<b>5. 최종 출력</b>\n\n- <code>printf(\"%d\\n\", ans);</code> → <b>12</b> 출력 후 줄바꿈. <code>%d</code>는 10진수 출력, <code>\\n</code>은 줄바꿈입니다.\n\n<b>6. 시험장에서 이렇게 보면 됩니다</b>\n\n- 재귀호출과 현재 노드 처리의 위치를 먼저 확인합니다.\n- 전위: <b>현재 → 왼쪽 → 오른쪽</b>, 중위: <b>왼쪽 → 현재 → 오른쪽</b>, 후위: <b>왼쪽 → 오른쪽 → 현재</b>.\n- 이 문제는 후위 순회이므로 <b>35 → 53 → 12 → 64 → 21</b>, 세 번째 값이 <b>12</b>입니다.\n- <b>핵심 출제 패턴:</b> 구조체 포인터 <code>-></code>, NULL 종료 조건, 재귀호출 순서, 전위 증가 <code>++c</code>."
+    },
+    {
+      "id": "practical-2026-2-8",
+      "number": 8,
+      "promptMarkdown": "다음 프로세스들을 SRT(Shortest Remaining Time) 스케줄링 기법으로 처리할 때, 평균 대기시간을 구하시오. (단위: ms)\n\n| 프로세스 | 도착시간 | 버스트시간 |\n| --- | --- | --- |\n| P1 | 0 | 8 |\n| P2 | 1 | 4 |\n| P3 | 2 | 9 |\n| P4 | 3 | 5 |",
+      "answerMarkdown": "6.5ms",
+      "explanationMarkdown": ""
+    },
+    {
+      "id": "practical-2026-2-9",
+      "number": 9,
+      "promptMarkdown": "다음은 C언어 코드에 대한 문제이다. 아래 코드를 확인하여 알맞는 출력값을 작성하시오.\n\n```c\n#include \\<stdio.h\\>\nvoid fn1(int* i) { *i = 50; }\nvoid fn2(int i) { i = 60; }\nvoid fn34(int* p) {\n\tprintf(\"3. %dn\", *p);\n\tprintf(\"4. %dn\", *(p + 3));\n}\nint main(){\n\tint i = 30;\n\tint list\\[] = {2, 4, 6, 8, 10};\n\tfn1(&i);\n\tprintf(\"1. %dn\", i);\n\tfn2(i);\n\tprintf(\"2. %dn\", i);\n\tfn34(list);\n\treturn 0;\n}\n```",
+      "answerMarkdown": "1. 50\n2. 50\n3. 2\n4. 8",
+      "explanationMarkdown": "### 풀이 및 복습 — 값 전달과 포인터를 통한 원본 변경\n\n<b>1. 변수 역할</b>\n\n- main의 <code>i</code>: 원본 정수 변수, 초기값 30.\n- fn1의 <code>int* i</code>: 원본 변수의 주소를 받는 포인터.\n- fn2의 <code>int i</code>: 원본의 값만 복사받는 별도 지역변수.\n- <code>list = {2,4,6,8,10}</code>, fn34의 <code>p</code>: 배열 첫 원소를 가리키는 포인터.\n\n<b>2. 실행 흐름</b>\n\n1. <code>fn1(&i)</code>: 원본 주소를 전달하고 <code>*i = 50</code>으로 원본을 변경 → 첫 번째 출력 <b>50</b>.\n2. <code>fn2(i)</code>: 현재 값 50을 복사해 전달. 함수 안에서 <code>i = 60</code>으로 바꿔도 <b>복사본만 변경</b>, main의 i는 50 → 두 번째 출력 <b>50</b>.\n3. <code>fn34(list)</code>: <code>*p</code>는 첫 원소 2, <code>*(p+3)</code>은 인덱스 3의 값 8 → 세 번째 <b>2</b>, 네 번째 <b>8</b>.\n\n<b>3. 원본 변경 구분</b>\n\n- <code>fn(i)</code> + <code>void fn(int i) { i=60; }</code> → 지역변수만 변경, 원본 유지.\n- <code>fn(&i)</code> + <code>void fn(int *i) { *i=60; }</code> → 전달받은 주소의 값을 바꿔 원본 변경.\n- C의 인자 전달은 모두 값 전달이며, 포인터를 넘길 때는 <b>주소값을 복사</b>해서 전달합니다.\n- 단, main에서 직접 <code>i=60</code>을 실행하면 원본이 변경됩니다.\n\n<b>4. 최종 출력 (값)</b>\n\n<ul>\n<li>\n<p />\n\n1. 50 / 2. 50 / 3. 2 / 4. 8.\n</li>\n</ul>\n\n<b>시험장에서 이렇게 보면 됩니다:</b> 함수 호출에서 <code>&i</code>인지 <code>i</code>인지, 매개변수가 <code>int*</code>인지 <code>int</code>인지 먼저 구분하세요. <code>*p</code>는 첫 원소, <code>*(p+3)</code>은 네 번째 원소입니다."
+    },
+    {
+      "id": "practical-2026-2-10",
+      "number": 10,
+      "promptMarkdown": "다음은 네트워크 A, B, C에 속한 호스트의 IP 주소 목록이다. 괄호 안에 들어갈 수 있는 IP 주소를 각각 하나씩 쓰시오.\n\n| 번호 | IP 주소 / 서브넷 |\n| --- | --- |\n| 1 | 192.168.35.3/24 |\n| 2 | (          ) |\n| 3 | 129.200.10.72/22 |\n| 4 | (          ) |\n| 5 | (          ) |\n| 6 | 192.168.36.16/24 |",
+      "answerMarkdown": "1. 192.168.35.72\n2. 129.200.8.249\n3. 192.168.36.249",
+      "explanationMarkdown": ""
+    },
+    {
+      "id": "practical-2026-2-11",
+      "number": 11,
+      "promptMarkdown": "다음은 GoF(Gang of Four) 디자인 패턴에 대한 설명이다. 괄호 안에 들어갈 알맞은 용어를 쓰시오.\n\n( )는 서로 관련 있는 여러 객체(제품군)를 생성하기 위한 인터페이스를 제공하는 생성 패턴으로, Kit이라고도 불린다. 이 패턴을 사용하면 구체적인 클래스를 지정하지 않고도 연관된 제품군 전체를 한 번에 변경할 수 있다.",
+      "answerMarkdown": "추상 팩토리 (Abstract Factory)",
+      "explanationMarkdown": ""
+    },
+    {
+      "id": "practical-2026-2-12",
+      "number": 12,
+      "promptMarkdown": "다음 \\<학생> 테이블에서 성이 '이'씨인 학생의 정보를 조회하되, 학번을 기준으로 내림차순 정렬하여 출력하고자 한다. SQL문의 괄호 안에 들어갈 알맞은 내용을 각각 쓰시오.\n\n<b>\\[표\\] \\<학생></b>\n\n| 학번 | 성명 | 학과 |\n| --- | --- | --- |\n| 2020001 | 이동룡 | 컴퓨터공학과 |\n| 2020002 | 김철수 | 전자공학과 |\n| 2020003 | 이순신 | 정보통신공학과 |\n| 2020004 | 박영희 | 컴퓨터공학과 |\n\n<b>\\[SQL문\\]</b>\n\n```sql\nSELECT \\* FROM 학생\nWHERE 성명 LIKE '( 1 )'\nORDER BY 학번 ( 2 );\n```",
+      "answerMarkdown": "1. 이%\n2. DESC",
+      "explanationMarkdown": ""
+    },
+    {
+      "id": "practical-2026-2-13",
+      "number": 13,
+      "promptMarkdown": "다음 \\<A>, \\<B> 테이블과 SQL문을 참고하여, SQL문을 실행했을 때 출력되는 RESULT 값을 구하시오.\n\n<b>\\[표\\] \\<A></b>\n\n| id | x |\n| --- | --- |\n| 1 | 10 |\n| 2 | 20 |\n| 3 | 30 |\n| 4 | 40 |\n\n<b>\\[표\\] \\<B></b>\n\n| id | y |\n| --- | --- |\n| 1 | 5 |\n| 1 | 15 |\n| 2 | 20 |\n| 3 | 35 |\n| 5 | 50 |\n\n<b>\\[SQL문\\]</b>\n\n```sql\nSELECT COUNT(\\*) AS RESULT\nFROM A\nWHERE x \\> (\n\tSELECT AVG(y)\n\tFROM B\n\tWHERE [B.id](http://B.id) IN (\n\t\tSELECT [A2.id](http://A2.id)\n\t\tFROM A AS A2\n\t\tWHERE A2.x \\< A.x\n\t)\n);\n```",
+      "answerMarkdown": "3",
+      "explanationMarkdown": "### 풀이 및 복습 — 테이블 별칭, 상관 서브쿼리, AVG, COUNT\n\n<b>1. SQL 문법 해석</b>\n\n- <code>FROM A AS A2</code>: 기존 A 테이블에 <b>A2라는 별칭</b>을 붙여 다시 참조합니다. JOIN이 없어도 <code>A2.x</code>, <code>A2.id</code>를 사용할 수 있습니다.\n- <code>A.x</code>: 바깥쪽 쿼리에서 현재 검사 중인 A 행의 x. <code>A2.x</code>: 안쪽 쿼리의 A2 행의 x.\n- <code>WHERE A2.x < A.x</code>: 바깥 A.x보다 작은 x를 가진 A2 행의 id를 찾습니다.\n- <code>B.id IN (...)</code>: 해당 id 중 하나에 일치하는 B의 행들을 선택합니다.\n- <code>AVG(y)</code>: 선택된 B 행의 y 평균. <code>COUNT(*)</code>: 최종 조건을 만족한 바깥 A 행의 개수.\n\n<b>2. 상관 서브쿼리 주의</b>\n\n- 안쪽 쿼리에서 바깥쪽 <code>A.x</code>를 사용하므로 <b>상관 서브쿼리</b>입니다.\n- A.x가 10, 20, 30, 40으로 바뀔 때마다 안쪽 결과 및 AVG를 <b>각각 다시 계산</b>해야 합니다. 마지막 평균 하나를 전체 x와 비교하면 안 됩니다.\n\n<b>3. 실제 값 추적</b>\n\n| 바깥 A.x | A2에서 선택한 id | B에서 선택한 y | AVG(y) | x > AVG(y) |\n| --- | --- | --- | --- | --- |\n| 10 | 없음 | 없음 | NULL | 제외 |\n| 20 | 1 | 5, 15 | 10 | 참 |\n| 30 | 1, 2 | 5, 15, 20 | 약 13.33 | 참 |\n| 40 | 1, 2, 3 | 5, 15, 20, 35 | 18.75 | 참 |\n\n- 특히 A.x=40일 때 id는 1,2,3이지만 <b>B의 id=1이 두 행</b>이므로 <code>(5+15+20+35)/4 = 18.75</code>입니다. 13.33이 아닙니다.\n- A.x=10에서는 AVG에 사용할 행이 없어 NULL이며, <code>10 > NULL</code>은 TRUE가 아닙니다.\n- 참인 바깥 행은 x=20,30,40의 <b>3행</b>이므로 <code>COUNT(*) AS RESULT</code> → <b>3</b>.\n\n<b>4. 시험장에서 이렇게 보면 됩니다</b>\n\n1. <code>AS A2</code>를 보면 A를 별칭 A2로 다시 참조한다는 것을 확인합니다.\n2. 안쪽 WHERE에서 바깥 열(<code>A.x</code>)을 참조하는지 확인합니다. 참조한다면 <b>상관 서브쿼리</b>.\n3. 바깥 행별로 [A2.id](http://A2.id) 목록 → B.y 목록 → AVG(y) → x 비교 순서로 계산합니다.\n4. 중복 id가 있어도 B의 <b>모든 해당 행</b>을 평균에 포함하고, 조건이 TRUE인 바깥 행만 COUNT합니다.\n\n<b>정처기 출제 패턴:</b> <code>AS</code> 별칭 / <code>IN</code> 집합 포함 / <code>AVG</code> 평균 / <code>COUNT(*)</code> 행 수 / 상관 서브쿼리의 <b>행별 재계산</b>."
+    },
+    {
+      "id": "practical-2026-2-14",
+      "number": 14,
+      "promptMarkdown": "다음 \\<A>, \\<B> 테이블과 SQL문을 참고하여, SQL문을 실행했을 때 출력되는 결과값을 구하시오.\n\n<b>\\[표\\] \\<A></b>\n\n| id | v |\n| --- | --- |\n| 1 | 10 |\n| 1 | 20 |\n| 2 | 30 |\n\n<b>\\[표\\] \\<B></b>\n\n| id | w |\n| --- | --- |\n| 1 | 100 |\n| 3 | 300 |\n| 4 | 400 |\n\n<b>\\[SQL문\\]</b>\n\n```sql\nSELECT COUNT(\\*)\nFROM A\nRIGHT OUTER JOIN B\n\tON [A.id](http://A.id) = [B.id](http://B.id)\nWHERE [A.id](http://A.id) IS NULL;\n```",
+      "answerMarkdown": "2",
+      "explanationMarkdown": ""
+    },
+    {
+      "id": "practical-2026-2-15",
+      "number": 15,
+      "promptMarkdown": "다음은 Java 코드에 대한 문제이다. 아래 코드를 확인하여 알맞는 출력값을 작성하시오.\n\n```java\nclass A {\n\tint a;\n\tprivate int b;\n\tprotected int c;\n\tvoid set(int aa, int bb, int cc) {\n\t\ta = aa;\n\t\tb = bb;\n\t\tc = cc;\n\t}\n\tint hap() { return a + b + c; }\n}\nclass B extends A {\n\tpublic int hap() { return a * c; }\n}\npublic class Main {\n\tpublic static void main(String[] args) {\n\t\tA aaa = new A();\n\t\tB bbb = new B();\n\t\taaa.set(1, 5, 3);\n\t\tbbb.set(10, 30, 50);\n\t\tSystem.out.print(aaa.hap() + bbb.hap());\n\t}\n}\n```",
+      "answerMarkdown": "509",
+      "explanationMarkdown": ""
+    },
+    {
+      "id": "practical-2026-2-16",
+      "number": 16,
+      "promptMarkdown": "다음은 IP 주소 서브네팅(Subnetting)에 대한 설명이다. 물음에 답하시오.\n\n10.0.0.0/27 네트워크를 동일한 크기의 2개 서브넷으로 분할하였다.\n\n- <b>첫 번째 서브넷: 10.0.0.0 \\~ 10.0.0.15</b>\n- <b>두 번째 서브넷: 10.0.0.16 \\~ 10.0.0.31</b>\n\n이때 10.0.0.10이 속한 서브넷의 프리픽스 길이(비트 수)를 구하시오.",
+      "answerMarkdown": "/28 (28비트)",
+      "explanationMarkdown": "### 풀이 및 복습 — 프리픽스 길이와 호스트 비트 구분\n\n<b>1. 개념 구분</b>\n\n- <b>프리픽스 길이:</b> 서브넷 마스크에서 1의 개수 = 네트워크 비트 수.\n- <b>호스트 비트 수:</b> IPv4 전체 32비트 − 프리픽스 길이.\n- <b>전체 IP 주소 수:</b> 2\\^(호스트 비트 수).\n- <b>사용 가능한 호스트 수:</b> 일반적인 IPv4 서브넷에서는 2\\^(호스트 비트 수) − 2 (네트워크·브로드캐스트 주소 제외).\n\n<b>2. 16번 문제 풀이</b>\n\n1. 기존 <code>10.0.0.0/27</code>은 네트워크 비트 27개, 호스트 비트 5개.\n2. 동일한 크기 2개로 분할하므로 네트워크 비트 1개 추가 (2\\^1 = 2).\n3. 새 프리픽스는 <b>/28(28비트)</b>, 호스트 비트는 32 − 28 = <b>4비트</b>.\n4. 서브넷당 전체 주소 수는 2\\^4 = <b>16개</b>, 일반적인 사용 가능 호스트는 <b>14개</b>.\n5. 첫 번째 범위는 <code>10.0.0.0 ~ 10.0.0.15</code>, 두 번째는 <code>10.0.0.16 ~ 10.0.0.31</code>.\n6. 문제의 <code>10.0.0.10</code>은 첫 번째 서브넷 <code>10.0.0.0/28</code>에 속하므로 <b>정답은 28비트</b>.\n\n- 참고: <code>10.0.0.16</code>은 두 번째 서브넷의 네트워크 주소이고, 그 서브넷의 프리픽스도 /28입니다.\n\n<b>3. 시험장에서 이렇게 보면 됩니다</b>\n\n- '프리픽스 길이' → 네트워크 비트(1)의 개수, <b>28</b>.\n- '호스트 비트' → 남은 비트(0)의 개수, <b>4</b>.\n- '전체 IP 주소 수' → <b>16개</b>, '사용 가능한 호스트 수' → <b>14개</b>.\n- 'N개 서브넷으로 분할' → 2\\^n = N에 필요한 n비트를 기존 프리픽스에 추가합니다.\n\n<b>핵심 암기:</b> /28의 28은 네트워크 비트, 4는 호스트 비트, 16은 전체 IP 주소 수, 14는 사용 가능한 호스트 수입니다."
+    },
+    {
+      "id": "practical-2026-2-17",
+      "number": 17,
+      "promptMarkdown": "다음 설명에 해당하는 보안 기술 용어를 쓰시오.\n\n입력값의 길이와 상관없이 항상 정해진 길이의 결과값을 만들어내는 암호 기술이 있다.\n\n이 기술은 단방향성을 가지고 있어 결과값만으로는 원래의 입력값을 알아낼 수 없으며, 서로 다른 두 입력값이 같은 결과값을 만들어내는 경우가 최대한 발생하지 않도록 설계되어야 한다.\n\n이러한 성질을 가진 암호 기술을 무엇이라 하는가?",
+      "answerMarkdown": "해시 함수(Hash Function)",
+      "explanationMarkdown": ""
+    },
+    {
+      "id": "practical-2026-2-18",
+      "number": 18,
+      "promptMarkdown": "다음은 C언어 코드에 대한 문제이다. 아래 코드를 확인하여 알맞는 출력값을 작성하시오.\n\n```c\n#include <stdio.h>\n\nint c(int n) {\n    if (n <= 1) return n;\n    return c(n - 1) + c(n - 3);\n}\n\nint main() {\n    printf(\"%d\", c(5));\n    return 0;\n}\n```",
+      "answerMarkdown": "1",
+      "explanationMarkdown": ""
+    },
+    {
+      "id": "practical-2026-2-19",
+      "number": 19,
+      "promptMarkdown": "다음은 SEASON이라는 도메인을 정의하면서, 입력 가능한 값을 봄/여름/가을/겨울로 제한하는 SQL문이다. 괄호 안에 들어갈 알맞은 키워드를 쓰시오.\n\n```sql\nCREATE DOMAIN SEASON AS VARCHAR(6)\n    (    ) (VALUE IN ('spring', 'summer', 'autumn', 'winter'));\n```",
+      "answerMarkdown": "CHECK",
+      "explanationMarkdown": ""
+    },
+    {
+      "id": "practical-2026-2-20",
+      "number": 20,
+      "promptMarkdown": "아래 표에서 나타나고 있는 정규형을 작성하시오.\n\n| 고객아이디 | 강좌명 | 강사번호 |\n| --- | --- | --- |\n| apple | 영어회화 | P001 |\n| banana | 기초토익 | P002 |\n| carrot | 영어회화 | P001 |\n| carrot | 기초토익 | P004 |\n| orange | 영어회화 | P003 |\n| orange | 기초토익 | P004 |",
+      "answerMarkdown": "제3정규형",
+      "explanationMarkdown": ""
+    }
+  ]
+}

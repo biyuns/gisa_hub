@@ -15,7 +15,7 @@ export function StudyNavigation() {
           key={href}
           href={href}
           className={styles.link}
-          aria-current={pathname === href ? "page" : undefined}
+          aria-current={pathname === href || pathname.startsWith(`${href}/`) ? "page" : undefined}
         >
           {label}
         </Link>
