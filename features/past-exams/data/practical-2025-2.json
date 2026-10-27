@@ -1,0 +1,149 @@
+{
+  "id": "practical-2025-2",
+  "title": "2025년 2회 실기 임시 데이터",
+  "year": 2025,
+  "round": 2,
+  "examType": "practical",
+  "questions": [
+    {
+      "id": "practical-2025-2-1",
+      "number": 1,
+      "promptMarkdown": "다음 설명에서 괄호에 공통으로 들어갈 알맞은 답을 쓰시오.\n\n파일의 구조는 파일을 구성하는 레코드들이 보조기억장치에 편성되는 방식을 의미하는 것으로, 크게 순차, (    ), 해싱으로 구분된다. (    ) 파일 구조는 (값, 주소) 쌍으로 구성되는 데이터 구조를 활용하여 데이터에 접근하는 방식으로, 자기 디스크에서 주로 활용된다.",
+      "answerMarkdown": "색인(Index)",
+      "explanationMarkdown": ""
+    },
+    {
+      "id": "practical-2025-2-2",
+      "number": 2,
+      "promptMarkdown": "다음 설명에 해당하는 알맞은 용어를 영문 3글자로 쓰시오.\n\n- 다른 컴퓨터에 로그인, 원격 명령 실행, 파일 복사 등을 수행할 수 있도록 다양한 기능을 지원하는 프로토콜 또는 이를 이용한 응용 프로그램이다.\n- 데이터 암호화와 강력한 인증 방법으로 보안성이 낮은 네트워크에서도 안전하게 통신할 수 있다.\n- 키(key)를 통한 인증 방법을 사용하려면 사전에 클라이언트의 공개키를 서버에 등록해야 한다.\n- 기본적으로 22번 포트를 사용한다.",
+      "answerMarkdown": "SSH",
+      "explanationMarkdown": ""
+    },
+    {
+      "id": "practical-2025-2-3",
+      "number": 3,
+      "promptMarkdown": "다음 설명에 해당하는 용어를 \\<보기>에서 찾아 기호로 쓰시오.\n\n- 데이터베이스를 구성하는 가장 작은 논리적 단위로, 릴레이션에서 열(Column)에 해당한다.\n- 여러 구조상의 데이터 항목 또는 데이터 필드에 필드에 해당한다.\n- 객체의 특성을 기술한다.\n\n<b>보기</b>: Domain / Tuple / Attribute / Integrity / Degree / Relationship / Cardinality / Entity",
+      "answerMarkdown": "Attribute",
+      "explanationMarkdown": ""
+    },
+    {
+      "id": "practical-2025-2-4",
+      "number": 4,
+      "promptMarkdown": "다음 Java로 구현된 프로그램을 분석하여 실행 결과를 쓰시오.\n\n```java\npublic class Main {\n    public static void change(String[] data, String s) {\n        data[0] = s;\n        s = \"Z\";\n    }\n    public static void main(String[] args) {\n        String data[] = { \"A\" };\n        String s = \"B\";\n        change(data, s);\n        System.out.print(data[0] + s);\n    }\n}\n```",
+      "answerMarkdown": "BB",
+      "explanationMarkdown": ""
+    },
+    {
+      "id": "practical-2025-2-5",
+      "number": 5,
+      "promptMarkdown": "다음 C 언어로 구현된 프로그램을 분석하여 실행 결과를 쓰시오.\n\n```c\n#include <stdio.h>\n#include <stdlib.h>\nstruct node {\n    int p;\n    struct node* n;\n};\nint main() {\n    struct node a = {1, NULL};\n    struct node b = {2, NULL};\n    struct node c = {3, NULL};\n    a.n = &b; b.n = &c; c.n = NULL;\n    c.n = &a; a.n = &b; b.n = NULL;\n    struct node* head = &c;\n    printf(\"%d %d %d\", head->p, head->n->p, head->n->n->p);\n    return 0;\n}\n```",
+      "answerMarkdown": "3 1 2",
+      "explanationMarkdown": ""
+    },
+    {
+      "id": "practical-2025-2-6",
+      "number": 6,
+      "promptMarkdown": "스케줄링에 대한 다음 설명에서 괄호 ①, ②에 들어갈 알맞은 용어를 쓰시오.\n\n① 준비상태 큐에서 기다리고 있는 프로세스들 중에서 실행 시간이 가장 짧은 프로세스에 먼저 CPU를 할당하는 기법이다. 가장 작은 평균 대기 시간을 제공하는 최적 알고리즘이지만 실행시간을 미리 알기 어렵고, 실행시간이 긴 프로세스는 실행 시간이 짧은 프로세스에 계속 우선순위를 빼앗길 수 있다.\n\n② 현재 실행중인 프로세스의 남은 시간과 준비상태 큐에 새로 도착한 프로세스의 실행 시간을 비교하여 가장 짧은 실행 시간을 요구하는 프로세스에 CPU를 할당하는 기법이다. 시분할 시스템에 유용하며 준비상태 큐의 프로세스 실행 시간을 추적하여 보유하고 있어야 하므로 오버헤드가 증가한다.",
+      "answerMarkdown": "① SJF\n\n② SRT",
+      "explanationMarkdown": ""
+    },
+    {
+      "id": "practical-2025-2-7",
+      "number": 7,
+      "promptMarkdown": "다음 \\<EMPLOYEE> 릴레이션에 대해 관계 대수식 π\\_TTL(EMPLOYEE)을 수행했을 때 출력되는 \\<결과>의 각 괄호 ①\\~⑤에 들어갈 알맞은 답을 쓰시오.\n\n<b>EMPLOYEE</b>\n\n| INDEX | AGE | TTL |\n| --- | --- | --- |\n| 1 | 48 | 부장 |\n| 2 | 25 | 대리 |\n| 3 | 41 | 과장 |\n| 4 | 36 | 차장 |\n\n<b>관계 대수식</b>: π\\_TTL(EMPLOYEE)\n\n<b>결과</b>\n\n| (①) |\n| --- |\n| (②) |\n| (③) |\n| (④) |\n| (⑤) |",
+      "answerMarkdown": "① TTL\n\n② 부장\n\n③ 대리\n\n④ 과장\n\n⑤ 차장",
+      "explanationMarkdown": ""
+    },
+    {
+      "id": "practical-2025-2-8",
+      "number": 8,
+      "promptMarkdown": "다음 IP 주소와 서브넷 마스크에 대한 내용에서 괄호 ①, ②에 들어갈 알맞은 답을 쓰시오.\n\n호스트의 IP 주소가 223.13.234.132이고, 서브넷 마스크가 255.255.255.192일 때, 호스트가 속한 네트워크 주소는 223.13.234.(①)이고 해당 네트워크에서 사용할 수 있는 호스트 수는 (②)이다.",
+      "answerMarkdown": "① 128\n\n② 62",
+      "explanationMarkdown": ""
+    },
+    {
+      "id": "practical-2025-2-9",
+      "number": 9,
+      "promptMarkdown": "다음 Java로 구현된 프로그램을 분석하여 실행 결과를 쓰시오.\n\n```java\npublic class Main {\n    static interface F {\n        int apply(int x) throws Exception;\n    }\n    public static int run(F f) {\n        try {\n            return f.apply(3);\n        } catch (Exception e) {\n            return 7;\n        }\n    }\n    public static void main(String[] args) {\n        F f = (x) -> {\n            if (x > 2) {\n                throw new Exception();\n            }\n            return x * 2;\n        };\n        System.out.print(run(f) + run((int n) -> n + 9));\n    }\n}\n```",
+      "answerMarkdown": "19",
+      "explanationMarkdown": ""
+    },
+    {
+      "id": "practical-2025-2-10",
+      "number": 10,
+      "promptMarkdown": "다음 C 언어로 구현된 프로그램을 분석하여 실행 결과를 쓰시오.\n\n```c\n#include <stdio.h>\n#define SIZE 3\n\ntypedef struct {\n    int a[SIZE];\n    int front;\n    int rear;\n} Queue;\n\nvoid enq(Queue* q, int val) {\n    q->a[q->rear] = val;\n    q->rear = (q->rear + 1) % SIZE;\n}\n\nint deq(Queue* q) {\n    int val = q->a[q->front];\n    q->front = (q->front + 1) % SIZE;\n    return val;\n}\n\nint main() {\n    Queue q = {{0}, 0, 0};\n    enq(&q, 1);\n    enq(&q, 2);\n    deq(&q);\n    enq(&q, 3);\n    printf(\"%d 그리고 %d\", deq(&q), deq(&q));\n    return 0;\n}\n```",
+      "answerMarkdown": "2 그리고 3",
+      "explanationMarkdown": ""
+    },
+    {
+      "id": "practical-2025-2-11",
+      "number": 11,
+      "promptMarkdown": "클라이언트와 서버 간 자바스크립트 및 XML을 비동기 방식으로 처리하며 전체 페이지를 새로 고치지 않고도 웹 페이지 일부 영역만 업데이트할 수 있도록 하는 기술을 의미하는 용어를 쓰시오.\n\n웹 페이지 전체를 다시 불러오지 않고 서버와 비동기 통신하여 화면의 일부만 갱신할 수 있는 기술입니다.",
+      "answerMarkdown": "AJAX",
+      "explanationMarkdown": ""
+    },
+    {
+      "id": "practical-2025-2-12",
+      "number": 12,
+      "promptMarkdown": "다음 설명에서 해당하는 디자인 패턴을 아래 \\<보기>에서 찾아 쓰시오.\n\n복잡한 시스템을 개발하기 쉽도록 클래스나 객체들을 조합하는 패턴에 속하며, 트리 구조로 부분-전체 관계를 단순하게 정리해 주고 외부에서는 객체와 객체의 집합체를 동일하게 다룰 수 있도록 하는 패턴을 말한다.\n\n<b>보기</b>\n\n- 생성 패턴: Abstract Factory, Builder, Factory Method, Prototype, Singleton\n- 구조 패턴: Adapter, Bridge, Composite, Decorator, Facade, Proxy\n- 행위 패턴: Chain of Responsibility, Command, Interpreter, Iterator, Mediator, Memento, Observer, Strategy, Template Method",
+      "answerMarkdown": "Composite",
+      "explanationMarkdown": ""
+    },
+    {
+      "id": "practical-2025-2-13",
+      "number": 13,
+      "promptMarkdown": "서비스 거부(DoS) 공격 기법 중 TCP가 신뢰성 있는 전송을 위해 사용하는 3-way-handshake 과정을 의도적으로 중단시킴으로써 공격 대상 서버가 대기 상태에 놓여 정상적인 서비스를 수행하지 못하게 하는 공격 방법을 가리키는 용어를 쓰시오.\n\nTCP의 3-way-handshake 연결 수립 과정의 취약점을 이용하는 서비스 거부 공격 기법을 쓰시오.",
+      "answerMarkdown": "SYN Flooding",
+      "explanationMarkdown": ""
+    },
+    {
+      "id": "practical-2025-2-14",
+      "number": 14,
+      "promptMarkdown": "다음은 화이트박스 테스트의 프로그램 제어 흐름이다. 보기 커버리지로 구성할 테스트 케이스를 작성하시오.\n\n순서도 단계는 다음과 같다.\n\n① P = FALSE → ② X > Y ?\n\n② YES → ③ P = TRUE → ⑤ CALL SUB(X, P, RESULT)\n\n② NO → ④ X = X + 1 → ⑤ CALL SUB(X, P, RESULT)\n\n⑤ → ⑥ RESULT > 0 ?\n\n⑥ NO → ⑦ PRINT RESULT\n\n⑥ YES → ①로 반복\n\n각 분기 방향을 한 번 이상 포함하도록 두 경로를 작성하시오.",
+      "answerMarkdown": "①→②→③→⑤→⑥→⑦ / ①→②→④→⑤→⑥→①\n\n또는 ①→②→③→⑤→⑥→① / ①→②→④→⑤→⑥→⑦",
+      "explanationMarkdown": ""
+    },
+    {
+      "id": "practical-2025-2-15",
+      "number": 15,
+      "promptMarkdown": "준비상태 큐에 각 프로세스의 도착 시간과 실행 시간이 다음과 같을 때 RR(Round Robin) 스케줄링의 평균 대기 시간을 구하시오. (Time Slice는 4초이다.)\n\n| 프로세스 | 도착 시간 | 실행 시간 |\n| --- | --- | --- |\n| A | 0 | 8 |\n| B | 1 | 4 |\n| C | 2 | 9 |\n| D | 3 | 5 |",
+      "answerMarkdown": "11.75",
+      "explanationMarkdown": ""
+    },
+    {
+      "id": "practical-2025-2-16",
+      "number": 16,
+      "promptMarkdown": "다음 C 언어로 구현된 프로그램을 분석하여 실행 결과를 쓰시오.\n\n```c\n#include <stdio.h>\nstruct dat {\n    int x;\n    int y;\n};\nint main() {\n    struct dat a[] = {{1, 2}, {3, 4}, {5, 6}};\n    struct dat* ptr = a;\n    struct dat** pptr = &ptr;\n    (*pptr)[1] = (*pptr)[2];\n    printf(\"%d 그리고 %d\", a[1].x, a[1].y);\n    return 0;\n}\n```",
+      "answerMarkdown": "5 그리고 6",
+      "explanationMarkdown": ""
+    },
+    {
+      "id": "practical-2025-2-17",
+      "number": 17,
+      "promptMarkdown": "다음 Python으로 구현된 프로그램을 분석하여 실행 결과를 쓰시오.\n\n```py\nlst = [1, 2, 3]\ndst = {i: i*2 for i in lst}\ns = set(dst.values())\nlst[0] = 99\ndst[2] = 7\ns.add(99)\nprint(len(s & set(dst.values())))\n```",
+      "answerMarkdown": "2",
+      "explanationMarkdown": ""
+    },
+    {
+      "id": "practical-2025-2-18",
+      "number": 18,
+      "promptMarkdown": "다음 Java로 구현된 프로그램을 분석하여 실행 결과를 쓰시오.\n\n```java\npublic class Main {\n    public static class Parent {\n        public int x(int i) { return i + 2; }\n        public static String id() { return \"P\"; }\n    }\n    public static class Child extends Parent {\n        public int x(int i) { return i + 3; }\n        public static String id() { return \"C\"; }\n    }\n    public static void main(String[] args) {\n        Parent ref = new Child();\n        System.out.println(ref.x(2) + ref.id());\n    }\n}\n```",
+      "answerMarkdown": "5P",
+      "explanationMarkdown": ""
+    },
+    {
+      "id": "practical-2025-2-19",
+      "number": 19,
+      "promptMarkdown": "다음 Java로 구현된 프로그램을 분석하여 실행 결과를 쓰시오.\n\n```java\npublic class Main {\n    public static class BO {\n        public int v;\n        public BO(int v) { this.v = v; }\n    }\n    public static void main(String[] args) {\n        BO a = new BO(1);\n        BO b = new BO(2);\n        BO c = new BO(3);\n        BO[] arr = {a, b, c};\n        BO t = arr[0];\n        arr[0] = arr[2];\n        arr[2] = t;\n        arr[1].v = arr[0].v;\n        System.out.println(a.v + \"a\" + b.v + \"b\" + c.v);\n    }\n}\n```",
+      "answerMarkdown": "1a3b3",
+      "explanationMarkdown": ""
+    },
+    {
+      "id": "practical-2025-2-20",
+      "number": 20,
+      "promptMarkdown": "다음 C 언어로 구현된 프로그램을 분석하여 실행 결과를 쓰시오.\n\n```c\n#include <stdio.h>\n#include <stdlib.h>\nstruct node {\n    char c;\n    struct node* p;\n};\nstruct node* func(char* s) {\n    struct node* h = NULL, *n;\n    while (*s) {\n        n = malloc(sizeof(struct node));\n        n->c = *s++;\n        n->p = h;\n        h = n;\n    }\n    return h;\n}\nint main() {\n    struct node* n = func(\"BEST\");\n    while (n) {\n        putchar(n->c);\n        struct node* t = n;\n        n = n->p;\n        free(t);\n    }\n    return 0;\n}\n```",
+      "answerMarkdown": "TSEB",
+      "explanationMarkdown": ""
+    }
+  ]
+}

@@ -1,0 +1,149 @@
+{
+  "id": "practical-2025-3",
+  "title": "2025년 3회 실기 임시 데이터",
+  "year": 2025,
+  "round": 3,
+  "examType": "practical",
+  "questions": [
+    {
+      "id": "practical-2025-3-1",
+      "number": 1,
+      "promptMarkdown": "UML 다이어그램에 대한 다음 설명에서 괄호에 공통으로 들어갈 알맞은 용어를 쓰시오.\n\n<b>그림 구성</b>: Order 패키지가 Security 패키지(+Credentials, +MDSCript)를 «import» 관계로 참조한다.\n\n(   ) 다이어그램\n\n(   )은/는 UML 정적 모델링의 하나로, 관련있는 객체들을 하나로 묶어 상위 개념으로 추상화한 것이다. 위의 그림과 같이 유스케이스나 클래스를 묶음으로 그룹화하여 의존 관계를 표현하며, 대규모 시스템에서 주요 요소 간의 종속성을 파악하는 데 사용한다. 시스템의 구조를 간략하게 표현할 수 있고 관련 계층을 명확하게 파악할 수 있어, 불필요한 의존 관계를 제거하거나 간략화함으로써 시스템의 복잡도를 낮추는 것에도 사용할 수 있다.",
+      "answerMarkdown": "패키지(Package)",
+      "explanationMarkdown": ""
+    },
+    {
+      "id": "practical-2025-3-2",
+      "number": 2,
+      "promptMarkdown": "다음 설명에 해당하는 UNIX 명령어를 \\<보기>에서 찾아 쓰시오.\n\n① 현재 작업중인 디렉터리 경로를 화면에 표시한다.\n\n② 현재 디렉터리의 파일 목록을 표시한다.\n\n③ 디렉터리의 위치를 변경한다.\n\n④ 파일을 복사한다.\n\n<b>\\<보기></b> ls / fork / ps / cp / cat / pwd / chmod / cd",
+      "answerMarkdown": "① pwd\n\n② ls\n\n③ cd\n\n④ cp",
+      "explanationMarkdown": ""
+    },
+    {
+      "id": "practical-2025-3-3",
+      "number": 3,
+      "promptMarkdown": "화이트박스 테스트의 검증 기준에 대한 다음 설명에 해당하는 용어를 \\<보기>에서 찾아 쓰시오.\n\n테스트 케이스를 소스 코드의 조건문에 포함된 개별 조건식의 결과가 True인 경우와 False인 경우가 한 번 이상 수행되도록 설계한다.\n\n<b>\\<보기></b>\n\n- 문장 커버리지\n- 분기 커버리지\n- 조건 커버리지\n- 분기/조건 커버리지",
+      "answerMarkdown": "조건 커버리지",
+      "explanationMarkdown": ""
+    },
+    {
+      "id": "practical-2025-3-4",
+      "number": 4,
+      "promptMarkdown": "다음 설명에서 괄호 ①\\~⑤에 들어갈 알맞은 용어를 보기에서 찾아 기호로 쓰시오.\n\n- (①) 코드는 데이터 전송 시 오류를 검출하고 수정하는 코드로, 데이터 전송 과정에서 발생한 오류를 검출해 재전송 요구 없이 수신측에서 스스로 수정하는 (②) 방식에 속한다.\n- 오류 발생 시 송신측에 재전송을 요구하는 방식은 (③)이며, 대표적인 종류에는 (④) 검사와 (⑤) 검사가 있다.\n- (①) 코드: 전송 데이터에 n비트의 검사 비트를 추가해 오류를 검출하고 수정한다.\n- (④) 검사: 전송 데이터의 한 블록 끝에 1비트의 검사 비트를 추가해 오류를 검출한다.\n- (⑤) 검사: 송신측과 수신측이 동일한 특정 다항식을 사용하여 오류를 검출한다.\n\n<b>보기</b>: CRC / Parity / FEC / MD5 / BEC / BCD / NAK / Hamming",
+      "answerMarkdown": "① Hamming\n\n② FEC\n\n③ BEC\n\n④ Parity\n\n⑤ CRC",
+      "explanationMarkdown": ""
+    },
+    {
+      "id": "practical-2025-3-5",
+      "number": 5,
+      "promptMarkdown": "다음 C 언어로 구현된 프로그램을 분석하여 그 실행 결과를 쓰시오. (단, 출력문의 출력 서식을 준수하시오.)\n\n```c\n#include <stdio.h>\nstruct Test {\n    int i;\n    const char *g;\n};\nint main() {\n    struct Test test[] = {{1, \"AB\"}, {2, \"DC\"}, {3, \"EB\"}};\n    struct Test *p = &test[1];\n    printf(\"%s\", p->g + (p->i - 1));\n    return 0;\n}\n```",
+      "answerMarkdown": "C",
+      "explanationMarkdown": ""
+    },
+    {
+      "id": "practical-2025-3-6",
+      "number": 6,
+      "promptMarkdown": "다음 Java로 구현된 프로그램을 분석하여 그 실행 결과를 쓰시오. (단, 출력문의 출력 서식을 준수하시오.)\n\n```java\nenum Tri {\n    A(\"A\"), B(\"AB\"), C(\"ABC\");\n    private String code;\n    Tri(String code) {\n        this.code = code;\n    }\n    public String code() {\n        return code;\n    }\n}\npublic class Main {\n    public static void main(String[] args) {\n        Tri t = Tri.values()[Tri.A.name().length()];\n        System.out.print(t.code());\n    }\n}\n```",
+      "answerMarkdown": "AB",
+      "explanationMarkdown": ""
+    },
+    {
+      "id": "practical-2025-3-7",
+      "number": 7,
+      "promptMarkdown": "다음 \\<A> 테이블과 \\<B> 테이블을 참고하여 \\<SQL문>의 실행 결과를 쓰시오.\n\n<b>\\<A> 테이블 (NAME)</b>\n\n| NAME |\n| --- |\n| Smith |\n| Allen |\n| Scott |\n\n<b>\\<B> 테이블 (RULE)</b>\n\n| RULE |\n| --- |\n| S% |\n| %T% |\n\n<b>SQL문</b>\n\n```sql\nSELECT COUNT(*) CNT FROM A CROSS JOIN B WHERE A.NAME LIKE B.RULE;\n```",
+      "answerMarkdown": "4",
+      "explanationMarkdown": ""
+    },
+    {
+      "id": "practical-2025-3-8",
+      "number": 8,
+      "promptMarkdown": "다음 설명에 해당하는 용어를 \\<보기>에서 찾아 쓰시오.\n\n- 인터넷 애플리케이션에서 사용자 인증에 사용되는 표준 인증 방법으로, 공개 API(OpenAPI)로 구현된다.\n- 인터넷 사용자가 웹사이트나 애플리케이션에 비밀번호를 제공하지 않고 자신에게 접근 권한을 부여하여 사용할 수 있다.\n- 2010년 IETF에서 1.0이 공식 표준으로 발표되었다.\n\n<b>보기</b>\n\nOpenID / DEA / OAuth / SSP / SASL / PEAP / ODC / JAAS",
+      "answerMarkdown": "OAuth",
+      "explanationMarkdown": ""
+    },
+    {
+      "id": "practical-2025-3-9",
+      "number": 9,
+      "promptMarkdown": "다음 설명에 해당하는 알맞은 용어를 영문 약어로 쓰시오.\n\n- 사용자가 패스워드를 요청할 때마다 암호 알고리즘과 해시 함수를 이용하여 새로운 일회용 패스워드를 생성하며, 한 번 사용된 패스워드는 폐기되어 재사용할 수 없다.\n- 주로 은행 및 금융 거래 시 사용자 본인 인증을 강화하기 위해 널리 사용된다.",
+      "answerMarkdown": "OTP",
+      "explanationMarkdown": ""
+    },
+    {
+      "id": "practical-2025-3-10",
+      "number": 10,
+      "promptMarkdown": "다음 Java로 구현된 프로그램을 분석하여 괄호에 들어갈 알맞은 코드를 쓰시오.\n\n```java\ninterface Cals {\n    public void get(int v);\n}\n\nclass Test (       ) Cals {\n    public void get(int v) {\n        System.out.print(v+v);\n    }\n}\n\npublic class Main {\n    public static void main(String[] args) {\n        Cals a = new Test();\n        a.get(10);\n    }\n}\n```",
+      "answerMarkdown": "implements",
+      "explanationMarkdown": ""
+    },
+    {
+      "id": "practical-2025-3-11",
+      "number": 11,
+      "promptMarkdown": "다음 Python으로 구현된 프로그램을 분석하여 출력값 ①\\~⑧에 들어갈 알맞은 값을 쓰시오.\n\n```py\ndata = [\n    [3, 5, 2, 4, 1],\n    [4, 5, 1],\n    [4, 4, 1, 5, 4],\n    [4, 5]\n]\nresult = {}\nfor index, lis in enumerate(data):\n    list_sum = sum(lis)\n    list_len = len(lis)\n    result[index] = (list_sum, list_len)\nprint(result)\n```\n\n출력 결과의 딕셔너리 키와 튜플 값에 해당하는 수를 쓰시오.",
+      "answerMarkdown": "\\{0: (15, 5), 1: (10, 3), 2: (18, 5), 3: (9, 2)\\}",
+      "explanationMarkdown": ""
+    },
+    {
+      "id": "practical-2025-3-12",
+      "number": 12,
+      "promptMarkdown": "다음 (R)과 (S) 테이블에 대하여 관계대수 R ÷ S를 실행했을 때 출력되는 결과를 테이블로 작성하시오.\n\n<b>R</b>\n\n| A | B |\n| --- | --- |\n| a1 | b1 |\n| a2 | b2 |\n| a1 | b3 |\n\n<b>S</b>\n\n| B |\n| --- |\n| b1 |\n| b3 |",
+      "answerMarkdown": "| A |\n| --- |\n| a1 |",
+      "explanationMarkdown": ""
+    },
+    {
+      "id": "practical-2025-3-13",
+      "number": 13,
+      "promptMarkdown": "접근 통제(Access Control)에 대한 다음 설명에서 괄호 ①\\~③에 들어갈 알맞은 용어를 \\<보기>에서 찾아 쓰시오.\n\n① 주체와 객체의 등급을 비교하여 접근 권한을 부여하며 시스템이 접근통제 권한을 지정한다.\n\n② 사용자의 역할에 따라 접근 권한을 부여하며 중앙관리자가 접근통제 권한을 지정한다.\n\n③ 데이터에 접근하는 사용자의 신분에 따라 접근 권한을 부여하며 데이터 소유자가 접근통제 권한을 지정하고 제어한다.\n\n<b>보기</b>: DAC / MAC / RBAC",
+      "answerMarkdown": "① MAC\n\n② RBAC\n\n③ DAC",
+      "explanationMarkdown": ""
+    },
+    {
+      "id": "practical-2025-3-14",
+      "number": 14,
+      "promptMarkdown": "다음 테스트 케이스를 참조하여 괄호 ①\\~③에 들어갈 테스트 케이스의 구성 요소를 \\<보기>에서 찾아 쓰시오.\n\n| 식별자\\_ID | 테스트 항목 | (①) | (②) | (③) |\n| --- | --- | --- | --- | --- |\n| LS\\_WI0\\_35 | 로그인 기능 | 사용자 초기 화면 | 아이디(test\\_a01), 비밀번호(203a...) | 로그인 성공 |\n| LS\\_WI0\\_36 | 로그인 기능 | 사용자 초기 화면 | 아이디(test\\_a01), 비밀번호(1234) | 로그인 실패 - 비밀번호 불일치 |\n| LS\\_WI0\\_37 | 로그인 기능 | 사용자 초기 화면 | 아이디(\"\"), 비밀번호(\"\") | 로그인 실패 - 미입력 |\n\n<b>보기</b>: 요구 절차 / 의존성 여부 / 테스트 데이터 / 테스트 조건 / 하드웨어 환경 / 예상 결과 / 소프트웨어 환경 / 성공·실패 기준",
+      "answerMarkdown": "① 테스트 조건\n\n② 테스트 데이터\n\n③ 예상 결과",
+      "explanationMarkdown": ""
+    },
+    {
+      "id": "practical-2025-3-15",
+      "number": 15,
+      "promptMarkdown": "릴레이션을 구성하는 용어들에 대한 다음 설명에서 괄호 ①\\~③에 들어갈 알맞은 답을 \\<보기>에서 찾아 쓰시오.\n\n① 릴레이션을 구성하는 각각의 행을 의미하며, 파일 구조에서는 레코드에 해당한다.\n\n② 데이터 개체를 구성하고 있는 속성들에 데이터 타입이 정의되어 구체적인 데이터 값을 가진 것으로, 실제 값을 가진 튜플을 의미한다.\n\n③ 튜플의 개수를 의미한다.\n\n<b>보기</b>: 도메인 / 차수 / 속성 / 튜플 / 디그리 / 카디널리티 / 릴레이션 스키마 / 릴레이션 인스턴스",
+      "answerMarkdown": "① 튜플\n\n② 릴레이션 인스턴스\n\n③ 카디널리티",
+      "explanationMarkdown": ""
+    },
+    {
+      "id": "practical-2025-3-16",
+      "number": 16,
+      "promptMarkdown": "다음 C 언어로 구현된 프로그램을 분석하여 그 실행 결과를 쓰시오.\n\n```c\n#include <stdio.h>\nint main(void) {\n    char str[] = \"REPUBLICOFKOREA\";\n    int a = 0;\n    while (str[a] != '\\0')\n        ++a;\n    putchar(str[a-2]);\n    return 0;\n}\n```",
+      "answerMarkdown": "E",
+      "explanationMarkdown": ""
+    },
+    {
+      "id": "practical-2025-3-17",
+      "number": 17,
+      "promptMarkdown": "다음 C 언어로 구현된 프로그램을 분석하여 그 실행 결과를 쓰시오.\n\n```c\n#include <stdio.h>\nint main() {\n    int x = 7, y = 4, z;\n    z = y % 3 < 3 ? 2 : 1;\n    z = z & z >> 1;\n    z = x > 5 && z <= 3 ? z * x : z / x;\n    printf(\"%d\", z);\n    return 0;\n}\n```",
+      "answerMarkdown": "0",
+      "explanationMarkdown": ""
+    },
+    {
+      "id": "practical-2025-3-18",
+      "number": 18,
+      "promptMarkdown": "다음 Java로 구현된 프로그램을 분석하여 괄호에 들어갈 알맞은 코드를 쓰시오.\n\n```java\nclass Rectangle {\n    int x, y;\n    Rectangle(int x, int y) {\n        this.x = x;\n        this.y = y;\n    }\n    int getArea() {\n        return x*y;\n    }\n}\n\nclass Square extends Rectangle {\n    Square(int a) {\n        (      )(a, a);\n    }\n    int getSquareArea() {\n        return x*y;\n    }\n}\n\npublic class Main {\n    public static void main(String[] args) {\n        Square sq = new Square(10);\n        System.out.println(sq.getSquareArea());\n    }\n}\n```",
+      "answerMarkdown": "super",
+      "explanationMarkdown": ""
+    },
+    {
+      "id": "practical-2025-3-19",
+      "number": 19,
+      "promptMarkdown": "다음 C 언어로 구현된 프로그램을 분석하여 그 실행 결과를 쓰시오.\n\n```c\n#include <stdio.h>\nstruct Node {\n    struct Node* next;\n    unsigned int x;\n};\n\nint main() {\n    struct Node t1 = {0, 5u};\n    struct Node t2 = {0, 7u};\n    struct Node t3 = {0, 11u};\n    t3.next = &t2;\n    t2.next = &t1;\n\n    struct Node* curr = &t3;\n    int sum = 0;\n    while (curr) {\n        sum = sum * 3 + curr->x;\n        curr = curr->next;\n    }\n    sum = (sum ^ 42u) + 100u;\n    printf(\"%u\\n\", sum);\n}\n```",
+      "answerMarkdown": "187",
+      "explanationMarkdown": ""
+    },
+    {
+      "id": "practical-2025-3-20",
+      "number": 20,
+      "promptMarkdown": "다음 (A) 테이블을 참조하여 \\<SQL문>을 실행했을 때 출력되는 결과를 쓰시오.\n\n<b>A 테이블</b>\n\n| COL1 | COL2 |\n| --- | --- |\n| 2 | NULL |\n| 3 | 6 |\n| 2 | 3 |\n| NULL | 3 |\n| 4 | 5 |\n\n<b>SQL문</b>\n\n```sql\nSELECT COUNT(COL2)\nFROM A\nWHERE COL1 IN (2, 3)\n   OR COL2 IN (3, 5);\n```",
+      "answerMarkdown": "4",
+      "explanationMarkdown": ""
+    }
+  ]
+}

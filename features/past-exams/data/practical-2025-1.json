@@ -1,0 +1,149 @@
+{
+  "id": "practical-2025-1",
+  "title": "2025년 1회 실기 임시 데이터",
+  "year": 2025,
+  "round": 1,
+  "examType": "practical",
+  "questions": [
+    {
+      "id": "practical-2025-1-1",
+      "number": 1,
+      "promptMarkdown": "다음 설명에 해당하는 네트워크 보안 관련 용어를 쓰시오.\n\n- 상호 인증 과정을 가진 후 접속해 있는 서버와 서로 접속되어 클라이언트 사이의 세션 정보를 가로채는 공격 기법이다.\n- 접속을 위한 인증 정보 없이도 가로챈 세션을 이용해 공격자가 원래의 클라이언트인 것처럼 위장하여 서버의 자원이나 데이터를 무단으로 사용한다.\n- TCP 3-Way-Handshake 과정에 끼어들어 클라이언트와 서버 간에 동기화된 시퀀스 번호를 가로채 서버에 무단으로 접근하는 공격에 대표적이다.",
+      "answerMarkdown": "세션 하이재킹(Session Hijacking)",
+      "explanationMarkdown": ""
+    },
+    {
+      "id": "practical-2025-1-2",
+      "number": 2,
+      "promptMarkdown": "다음은 무결성 제약 조건에 대한 설명이다. 괄호 ①\\~③에 들어갈 알맞은 용어를 \\<보기>에서 찾아 쓰시오.\n\n| 구분 | (①) 무결성 제약 조건 | (②) 무결성 제약 조건 | (③) 무결성 제약 조건 |\n| --- | --- | --- | --- |\n| 제약 대상 | 속성 | 튜플 | 속성, 튜플 |\n| NULL 값 |  | 기본키 | 외래키 |\n| 릴레이션 내 제약 조건 개수 | 속성의 개수와 동일 | 1개 | 0\\~여러 개 |\n\n<b>보기</b>: 데이터 / 사용자 정의 / 도메인 / 키 / 속성 / 개체 / 범위 / 참조",
+      "answerMarkdown": "① 도메인\n\n② 개체\n\n③ 참조",
+      "explanationMarkdown": ""
+    },
+    {
+      "id": "practical-2025-1-3",
+      "number": 3,
+      "promptMarkdown": "다음 C 언어로 구현된 프로그램을 분석하여 실행 결과를 쓰시오. (출력 서식을 준수하시오.)\n\n```c\n#include <stdio.h>\nchar Data[5] = {'B', 'A', 'D', 'E'};\nchar c;\nint main() {\n    int i, temp, temp2;\n    c = 'C';\n    printf(\"%d\\n\", Data[3] - Data[1]);\n    for(i = 0; i < 5; ++i) {\n        if(Data[i] > c)\n            break;\n    }\n    temp = Data[i];\n    Data[i] = c;\n    i++;\n    for(; i < 5; ++i) {\n        temp2 = Data[i];\n        Data[i] = temp;\n        temp = temp2;\n    }\n    for(i = 0; i < 5; i++) {\n        printf(\"%c\", Data[i]);\n    }\n}\n```",
+      "answerMarkdown": "4\n\nBACDE",
+      "explanationMarkdown": ""
+    },
+    {
+      "id": "practical-2025-1-4",
+      "number": 4,
+      "promptMarkdown": "다음 설명에 해당하는 알맞은 용어를 영문 약어로 쓰시오.\n\n- 다항식 코드를 사용하여 오류를 검출하는 방식이다.\n- 동기식 전송에서 주로 사용되며, HDLC 프레임의 FCS(프레임 검사 순서) 필드에 사용된다.\n- 집단 오류를 검출할 수 있고 검출률이 높으므로 가장 많이 사용한다.",
+      "answerMarkdown": "CRC",
+      "explanationMarkdown": ""
+    },
+    {
+      "id": "practical-2025-1-5",
+      "number": 5,
+      "promptMarkdown": "다음 Java로 구현된 프로그램을 분석하여 실행 결과를 쓰시오.\n\n```java\npublic class Main {\n    public static void main(String[] args) {\n        int a = 5, b = 0;\n        try {\n            System.out.print(a/b);\n        }\n        catch(ArithmeticException e) {\n            System.out.print(\"출력1\");\n        }\n        catch(ArrayIndexOutOfBoundsException e) {\n            System.out.print(\"출력2\");\n        }\n        catch(NumberFormatException e) {\n            System.out.print(\"출력3\");\n        }\n        catch(Exception e) {\n            System.out.print(\"출력4\");\n        }\n        finally {\n            System.out.print(\"출력5\");\n        }\n    }\n}\n```",
+      "answerMarkdown": "출력1출력5",
+      "explanationMarkdown": ""
+    },
+    {
+      "id": "practical-2025-1-6",
+      "number": 6,
+      "promptMarkdown": "다음 \\<emp>와 \\<sal> 테이블을 참조하여 \\<SQL문>을 실행했을 때 출력되는 결과를 쓰시오.\n\n<b>emp</b>\n\n| id | name |\n| --- | --- |\n| 1002 | 홍길동 |\n| 1004 | 강감찬 |\n| 1006 | 김유신 |\n| 1008 | 이순신 |\n\n<b>sal</b>\n\n| id | incentive |\n| --- | --- |\n| 1002 | 300 |\n| 1004 | 400 |\n| 1008 | 1000 |\n| 1009 | 500 |\n\n<b>SQL문</b>\n\n```sql\nSELECT name, incentive\nFROM emp, sal\nWHERE emp.id = sal.id and incentive >= 500;\n```",
+      "answerMarkdown": "| name | incentive |\n| --- | --- |\n| 이순신 | 1000 |",
+      "explanationMarkdown": ""
+    },
+    {
+      "id": "practical-2025-1-7",
+      "number": 7,
+      "promptMarkdown": "다음은 결합도(Coupling)에 대한 설명이다. 괄호 ①\\~③에 들어갈 알맞은 결합도를 \\<보기>에서 찾아 기호로 쓰시오.\n\n① 한 모듈이 다른 모듈 내부 기능 및 그 내부 자료를 직접 참조하거나 수정할 때의 결합도이다.\n\n② 모듈 간 인터페이스를 통해 데이터가 파라미터로 전달되는 결합도이다.\n\n③ 공유되는 공통 데이터 영역을 여러 모듈이 사용할 때의 결합도로, 파라미터가 아닌 모듈 밖에 선언된 전역 변수를 사용하여 전역 변수를 갱신하는 방식으로 상호작용하는 때의 결합도이다.\n\n<b>보기</b>: 외부 결합도 / 스탬프 결합도 / 제어 결합도 / 자료 결합도 / 내용 결합도 / 공통 결합도",
+      "answerMarkdown": "① 내용 결합도\n\n② 자료 결합도\n\n③ 공통 결합도",
+      "explanationMarkdown": ""
+    },
+    {
+      "id": "practical-2025-1-8",
+      "number": 8,
+      "promptMarkdown": "다음 설명에 해당하는 용어를 \\<보기>에서 찾아 쓰시오.\n\n사용자에게 컴퓨터가 바이러스에 감염되었다고 속이거나 보안 위험이 있다고 거짓 경고 메시지를 보내어 불안감을 조성한 후 문제 해결을 명목으로 불필요한 소프트웨어 구매를 유도하는 악성 소프트웨어이다.\n\n<b>보기</b>: 랜섬웨어 / 애드웨어 / 스파이웨어 / 스케어웨어 / 키로거 / 봇넷",
+      "answerMarkdown": "스케어웨어",
+      "explanationMarkdown": ""
+    },
+    {
+      "id": "practical-2025-1-9",
+      "number": 9,
+      "promptMarkdown": "현재 IP 주소가 192.168.35.100이고, 서브넷 마스크가 255.255.252.0인 컴퓨터에서 브로드캐스팅으로 다른 IP로 정보를 전달하려고 한다. 이때 수신할 수 있는 알맞은 IP 주소를 \\<보기>에서 골라 모두 작성하시오.\n\n<b>보기</b>\n\n① 192.168.32.1\n\n② 192.168.33.50\n\n③ 192.168.34.126\n\n④ 192.168.35.100\n\n⑤ 192.168.35.200",
+      "answerMarkdown": "①, ②, ③, ④, ⑤",
+      "explanationMarkdown": ""
+    },
+    {
+      "id": "practical-2025-1-10",
+      "number": 10,
+      "promptMarkdown": "프로토콜에 대한 다음 설명에서 괄호 ①, ②에 들어갈 알맞은 용어를 쓰시오.\n\n①은 호스트의 IP 주소를 호스트와 연결된 네트워크 접속 장치의 물리적 주소(MAC Address)로 변환하는 프로토콜이고, ②는 ①과 반대로 물리적 주소를 IP 주소로 변환하는 프로토콜이다.",
+      "answerMarkdown": "① ARP\n\n② RARP",
+      "explanationMarkdown": ""
+    },
+    {
+      "id": "practical-2025-1-11",
+      "number": 11,
+      "promptMarkdown": "다음 Java로 구현된 프로그램을 분석하여 실행 결과를 쓰시오.\n\n```java\npublic class Main {\n    public static void main(String[] args) {\n        new Child();\n        System.out.println(Parent.total);\n    }\n}\n\nclass Parent {\n    static int total = 0;\n    int v = 1;\n    public Parent() {\n        total += ++v;\n        show();\n    }\n    public void show() {\n        total += total;\n    }\n}\n\nclass Child extends Parent {\n    int v = 10;\n    public Child() {\n        v += 2;\n        total += v++;\n        show();\n    }\n    @Override\n    public void show() {\n        total += total * 2;\n    }\n}\n```",
+      "answerMarkdown": "54",
+      "explanationMarkdown": ""
+    },
+    {
+      "id": "practical-2025-1-12",
+      "number": 12,
+      "promptMarkdown": "다음 C 언어로 구현된 프로그램을 분석하여 실행 결과를 쓰시오.\n\n```c\n#include <stdio.h>\n#include <stdlib.h>\nvoid set(int** arr, int* data, int rows, int cols) {\n    for (int i = 0; i < rows * cols; ++i) {\n        arr[((i + 1) / rows) % rows][(i + 1) % cols] = data[i];\n    }\n}\nint main() {\n    int rows = 3, cols = 3, sum = 0;\n    int data[] = {5, 2, 7, 4, 1, 8, 3, 6, 9};\n    int** arr;\n    arr = (int**) malloc(sizeof(int*) * rows);\n    for (int i = 0; i < cols; i++) {\n        arr[i] = (int*) malloc(sizeof(int) * cols);\n    }\n    set(arr, data, rows, cols);\n    for (int i = 0; i < rows * cols; i++) {\n        sum += arr[i / rows][i % cols] * (i % 2 == 0 ? 1 : -1);\n    }\n    for (int i = 0; i < rows; i++) free(arr[i]);\n    free(arr);\n    printf(\"%d\", sum);\n}\n```",
+      "answerMarkdown": "13",
+      "explanationMarkdown": ""
+    },
+    {
+      "id": "practical-2025-1-13",
+      "number": 13,
+      "promptMarkdown": "다음 설명에 해당하는 디자인 패턴을 \\<보기>에서 찾아 쓰시오.\n\n- 호환성이 없는 클래스들의 인터페이스를 다른 클래스가 이용할 수 있도록 변환해 주는 패턴이다.\n- 기존의 클래스를 이용하고 싶지만 인터페이스가 일치하지 않을 때 이용한다.\n\n<b>보기</b>: Abstract Factory / Adapter / Command / Builder / Bridge / Interpreter / Factory Method / Composite / Iterator / Prototype / Decorator / Mediator / Singleton / Proxy / Observer",
+      "answerMarkdown": "Adapter",
+      "explanationMarkdown": ""
+    },
+    {
+      "id": "practical-2025-1-14",
+      "number": 14,
+      "promptMarkdown": "다음 제시된 코드를 이용하여 순서도의 번호 ①\\~⑥에 들어갈 코드를 작성하고, 문장 커버리지로 구성할 테스트 케이스를 제시하시오.\n\n```c\nint main(int b[], int m, int x) {\n    int a = 0;\n    while (a < m || b[a] < x) {\n        if (b[a] < 0)\n            b[a] = -b[a];\n        a++;\n    }\n    return 1;\n}\n```\n\n<b>순서도</b>\n\n① 초기화 → ② while 조건 검사\n\n- 조건이 참이면 ③ if 조건 검사로 이동\n- ③ 조건이 참이면 ④ 음수 양수로 변경\n- ③ 조건이 거짓이거나 ④를 마치면 ⑤ a 증가\n- ⑤를 마친 후 ②로 돌아감\n- ② 조건이 거짓이면 ⑥ 종료\n\n문장 커버리지 기준으로 ①\\~⑥을 모두 수행하는 테스트 경로를 작성하시오.",
+      "answerMarkdown": "① int a = 0;\n\n② a \\< m \\|\\| b\\[a\\] \\< x\n\n③ b\\[a\\] \\< 0\n\n④ b\\[a\\] = -b\\[a\\];\n\n⑤ a++;\n\n⑥ return 1;\n\n문장 커버리지 경로 예: ① → ② → ③ → ④ → ⑤ → ② → ⑥",
+      "explanationMarkdown": ""
+    },
+    {
+      "id": "practical-2025-1-15",
+      "number": 15,
+      "promptMarkdown": "데이터베이스와 관련된 용어들에 대한 다음 설명에서 괄호 ①\\~④에 들어갈 알맞은 답을 \\<보기>에서 찾아 쓰시오.\n\n① 릴레이션에서 속성의 개수\n\n② 릴레이션에서 튜플의 개수\n\n③ 다른 릴레이션의 기본키를 참조하는 속성 또는 속성들의 집합\n\n④ 하나의 애트리뷰트가 취할 수 있는 같은 타입의 원자값들의 집합\n\n<b>보기</b>: Domain / Attribute / Degree / Candidate / Cardinality / Tuple / Foreign / Alternate",
+      "answerMarkdown": "① Degree\n\n② Cardinality\n\n③ Foreign\n\n④ Domain",
+      "explanationMarkdown": ""
+    },
+    {
+      "id": "practical-2025-1-16",
+      "number": 16,
+      "promptMarkdown": "다음 Java로 구현된 프로그램을 분석하여 실행 결과를 쓰시오.\n\n```java\npublic class Main {\n    public static void main(String[] args) {\n        System.out.println(calc(\"5\"));\n    }\n    static int calc(int value) {\n        if (value <= 1) return value;\n        return calc(value - 1) + calc(value - 2);\n    }\n    static int calc(String str) {\n        int value = Integer.valueOf(str);\n        if (value <= 1) return value;\n        return calc(value - 1) + calc(value - 3);\n    }\n}\n```",
+      "answerMarkdown": "4",
+      "explanationMarkdown": ""
+    },
+    {
+      "id": "practical-2025-1-17",
+      "number": 17,
+      "promptMarkdown": "다음 C 언어로 구현된 프로그램을 분석하여 실행 결과를 쓰시오.\n\n```c\n#include <stdio.h>\ntypedef struct student {\n    char* name;\n    int score[3];\n} Student;\n\nint dec(int enc) {\n    return enc & 0xA5;\n}\nint sum(Student* p) {\n    return dec(p->score[0]) + dec(p->score[1]) + dec(p->score[2]);\n}\nint main() {\n    Student s[2] = { {\"Kim\", {0xA0, 0xA5, 0xDB}}, {\"Lee\", {0xA0, 0xED, 0x81}} };\n    Student* p = s;\n    int result = 0;\n    for (int i = 0; i < 2; i++) {\n        result += sum(&s[i]);\n    }\n    printf(\"%d\", result);\n    return 0;\n}\n```",
+      "answerMarkdown": "908",
+      "explanationMarkdown": ""
+    },
+    {
+      "id": "practical-2025-1-18",
+      "number": 18,
+      "promptMarkdown": "다음 Java로 구현된 프로그램을 분석하여 실행 결과를 쓰시오.\n\n```java\npublic class Main {\n    public static void main(String[] args) {\n        int[] data = {3, 5, 8, 12, 17};\n        System.out.println(func(data, 0, data.length - 1));\n    }\n    static int func(int[] a, int st, int end) {\n        if (st >= end) return 0;\n        int mid = (st + end) / 2;\n        return a[mid] + Math.max(func(a, st, mid), func(a, mid + 1, end));\n    }\n}\n```",
+      "answerMarkdown": "20",
+      "explanationMarkdown": ""
+    },
+    {
+      "id": "practical-2025-1-19",
+      "number": 19,
+      "promptMarkdown": "다음 Python으로 구현된 프로그램을 분석하여 실행 결과를 쓰시오.\n\n```py\nclass Node:\n    def __init__(self, value):\n        self.value = value\n        self.children = []\n\ndef tree(li):\n    nodes = [Node(i) for i in li]\n    for i in range(1, len(li)):\n        nodes[(i - 1) // 2].children.append(nodes[i])\n    return nodes[0]\n\ndef calc(node, level=0):\n    if node is None:\n        return 0\n    return (node.value if level % 2 == 1 else 0) + sum(calc(n, level + 1) for n in node.children)\n\nli = [3, 5, 8, 12, 15, 18, 21]\nroot = tree(li)\nprint(calc(root))\n```",
+      "answerMarkdown": "13",
+      "explanationMarkdown": ""
+    },
+    {
+      "id": "practical-2025-1-20",
+      "number": 20,
+      "promptMarkdown": "다음 C 언어로 구현된 프로그램을 분석하여 실행 결과를 쓰시오.\n\n```c\n#include <stdio.h>\n#include <stdlib.h>\ntypedef struct Data {\n    int value;\n    struct Data *next;\n} Data;\n\nData* insert(Data* head, int value) {\n    Data* new_node = (Data*)malloc(sizeof(Data));\n    new_node->value = value;\n    new_node->next = head;\n    return new_node;\n}\nData* reconnect(Data* head, int value) {\n    if (head == NULL || head->value == value) return head;\n    Data *prev = NULL, *curr = head;\n    while (curr != NULL && curr->value != value) {\n        prev = curr;\n        curr = curr->next;\n    }\n    if (curr != NULL && prev != NULL) {\n        prev->next = curr->next;\n        curr->next = head;\n        head = curr;\n    }\n    return head;\n}\nint main() {\n    Data *head = NULL, *curr;\n    for (int i = 1; i <= 5; i++)\n        head = insert(head, i);\n    head = reconnect(head, 3);\n    for (curr = head; curr != NULL; curr = curr->next)\n        printf(\"%d\", curr->value);\n    return 0;\n}\n```",
+      "answerMarkdown": "35421",
+      "explanationMarkdown": ""
+    }
+  ]
+}
