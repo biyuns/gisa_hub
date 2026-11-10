@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import type { PastExam } from "../types";
 import { examSubjects } from "../data/exams";
+import { PracticalExamProgress } from "./practical-exam-progress";
 import styles from "../past-exams.module.css";
 
 export function ExamCard({ exam }: { exam: PastExam }) {
@@ -18,6 +19,7 @@ export function ExamCard({ exam }: { exam: PastExam }) {
       <h3>{exam.year}년 제{exam.round}회</h3>
       <p className={styles.cardSubtitle}>{practical ? `${exam.year}년 ${exam.round}회 실기 임시 데이터` : "정보처리기사 기출 모의고사"}</p>
       <div className={styles.examMeta}><span>{practical ? "답안 직접 입력" : `${examSubjects.length}과목`}</span><span>{exam.questionCount}문항</span>{exam.durationMinutes && <span>{exam.durationMinutes}분</span>}</div>
+      {practical && <PracticalExamProgress examId={exam.id} questionCount={exam.questionCount} />}
       {practical ? <Link className={styles.cardButton} style={{ textDecoration: "none" }} href={`/past-exams/${exam.id}`}>문제 풀어보기<span aria-hidden="true">↗</span></Link> : <button className={styles.cardButton} aria-expanded={expanded} aria-controls={detailsId} onClick={() => setExpanded(!expanded)}>시험 구성 {expanded ? "접기" : "보기"}<span aria-hidden="true">{expanded ? "−" : "↗"}</span></button>}
       {expanded && <div id={detailsId} className={styles.details}><strong>과목별 20문항</strong><ul>{examSubjects.map(subject => <li key={subject}>{subject}</li>)}</ul><p>문제 풀이 기능은 준비 중입니다.</p></div>}
     </article>

@@ -1,6 +1,6 @@
 import Link from "next/link";
 import type { PracticalExam } from "../types";
-import { PracticalQuestionCard } from "./practical-question-card";
+import { PracticalExamSession } from "./practical-exam-session";
 import styles from "../past-exams.module.css";
 import practicalStyles from "../practical-exam.module.css";
 
@@ -14,10 +14,9 @@ export function PracticalExamScreen({ exam }: { exam: PracticalExam }) {
       </header>
       <aside className={styles.guide}>
         <div className={styles.guideIcon} aria-hidden="true">✧</div>
-        <div><strong>먼저 생각하고, 답을 확인해보세요.</strong><p>여러 빈칸과 출력 결과는 번호나 줄바꿈으로 구분해 입력하세요. 정답은 직접 비교하며, 자동 채점과 기록 저장은 제공하지 않습니다.</p></div>
+        <div><strong>먼저 생각하고, 답을 확인해보세요.</strong><p>여러 답은 번호나 줄바꿈으로 구분하세요. 정답을 확인하고 직접 채점하면 오답과 복습 기록이 이 브라우저에 저장됩니다.</p></div>
       </aside>
-      <nav className={practicalStyles.questionNavigation} aria-label="문항 바로가기">{exam.questions.map(question => <a key={question.id} href={`#${question.id}`}>{question.number}</a>)}</nav>
-      <div className={practicalStyles.questionList}>{exam.questions.map(question => <PracticalQuestionCard key={question.id} question={question} />)}</div>
+      <PracticalExamSession exam={exam} />
       <p className={styles.notice}>ⓘ {exam.year}년 {exam.round}회 실기 임시 데이터입니다.</p>
     </div>
   </main>;
