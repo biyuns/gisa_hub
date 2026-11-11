@@ -1,0 +1,71 @@
+.loading { padding: 55px 24px; text-align: center; color: #969baa; font-size: 13px; border: 1px solid #e6e8ef; border-radius: 12px; background: #fff; }
+.overview { display: flex; justify-content: space-between; align-items: center; gap: 32px; padding: 30px; background: #f0ecfc; border: 1px solid #e8e1fa; border-radius: 12px; margin-bottom: 22px; }
+.overviewText { min-width: 0; }
+.completionBadge { display: inline-block; padding: 6px 10px; border-radius: 6px; font-size: 10px; color: #8865bd; background: #e7dff8; }
+.overview h2 { font-size: 20px; color: #6e568f; line-height: 1.6; letter-spacing: -.5px; margin: 15px 0 9px; }
+.overview p { font-size: 12px; color: #9685ad; line-height: 1.9; margin: 0; }
+.overview .accuracyBasis { margin-top: 12px; font-size: 11px; }
+.accuracy { display: flex; flex-direction: column; align-items: center; flex-shrink: 0; min-width: 145px; gap: 9px; color: #9685ad; font-size: 11px; }
+.accuracy strong { font-size: 48px; font-weight: 700; letter-spacing: -2px; line-height: 1.3; color: #7954df; }
+.accuracy small { font-size: 18px; margin-left: 4px; letter-spacing: 0; }
+.summary { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
+.summary article { padding: 23px; border: 1px solid #e6e8ef; border-radius: 12px; background: #fff; }
+.summary p { color: #8b90a2; font-size: 12px; margin: 0 0 13px; }
+.summary strong { font-size: 30px; font-weight: 700; color: #737b8e; }
+.summary article[data-status="정답"] strong { color: #5d967e; }
+.summary article[data-status="오답"] strong { color: #bc8585; }
+.summary strong span { font-size: 11px; font-weight: 400; color: #9a9fb0; margin-left: 6px; }
+.summary small { display: block; color: #a3a7b6; font-size: 10px; line-height: 1.8; margin-top: 10px; }
+.actions { display: flex; flex-wrap: wrap; gap: 10px; margin: 0 0 38px; }
+.primaryLink, .secondaryLink { display: inline-block; padding: 12px 17px; border-radius: 7px; font-size: 12px; text-decoration: none; line-height: 1.6; }
+.primaryLink { color: #fff; border: 1px solid #8060cf; background: #8060cf; }
+.primaryLink:hover { background: #7051bd; }
+.secondaryLink { color: #8b6ab9; border: 1px solid #e4dbf2; background: #fff; }
+.secondaryLink:hover { background: #f5f1fc; }
+.listHeading h2 { color: #272b3c; font-size: 18px; margin: 0; letter-spacing: -.5px; }
+.listHeading p { font-size: 12px; color: #969baa; line-height: 1.8; margin: 10px 0 20px; }
+.filters { display: flex; flex-wrap: wrap; gap: 7px; }
+.filters button { padding: 10px 14px; border-radius: 7px; border: 1px solid #e6e8ef; background: #fff; color: #9498a8; font: inherit; font-size: 12px; cursor: pointer; }
+.filters button[aria-pressed="true"] { background: #7660d1; border-color: #7660d1; color: #fff; }
+.filters span { margin-left: 5px; font-size: 10px; }
+.resultCount { font-size: 11px; color: #969baa; margin: 18px 0 14px; }
+.resultList { display: flex; flex-direction: column; gap: 15px; }
+.resultCard { padding: 24px; border: 1px solid #e5e8f0; border-radius: 12px; background: #fff; min-width: 0; }
+.cardHeader { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; }
+.questionNumber { color: #a18acb; font-size: 18px; font-weight: 600; }
+.statusBadge { display: inline-block; border-radius: 5px; background: #f3f4f8; color: #9296a5; padding: 5px 9px; font-size: 10px; }
+.statusBadge[data-status="정답"] { color: #5d967e; background: #edf7f1; }
+.statusBadge[data-status="오답"] { color: #bc8585; background: #fcf0f0; }
+.statusBadge[data-status="채점 대기"] { color: #b18a58; background: #fff5e9; }
+.cardHeader a { margin-left: auto; color: #8b6ab9; text-decoration: none; font-size: 11px; }
+.resultCard h3 { font-size: 14px; line-height: 1.9; font-weight: 600; margin: 17px 0; color: #555d71; overflow-wrap: anywhere; }
+.myAnswer { padding: 15px 17px; border-radius: 8px; background: #f8f9fc; }
+.resultCard h4 { font-size: 12px; font-weight: 600; color: #8b6ab9; margin: 0 0 10px; }
+.myAnswer p { color: #737b8e; white-space: pre-wrap; overflow-wrap: anywhere; font-size: 12px; line-height: 1.8; margin: 0; }
+.details { margin-top: 16px; color: #8b6ab9; font-size: 11px; }
+.details summary { cursor: pointer; padding: 5px 0; }
+.detailContent { margin-top: 15px; padding-top: 20px; border-top: 1px solid #eeeaf5; }
+.detailContent > section { margin-top: 18px; }
+.explanation { padding: 18px; border-radius: 8px; background: #f8f5fd; }
+.explanation > p { color: #9490a2; font-size: 12px; line-height: 1.9; margin: 0; }
+.filters button:focus-visible, .actions a:focus-visible, .cardHeader a:focus-visible, .details summary:focus-visible { outline: 2px solid #9270d8; outline-offset: 3px; }
+@media (max-width: 760px) {
+  .overview { padding: 24px; gap: 20px; }
+  .overview h2 { font-size: 18px; }
+  .accuracy { min-width: 110px; }
+  .summary { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+}
+@media (max-width: 580px) {
+  .overview { flex-direction: column; align-items: stretch; padding: 22px 18px; gap: 22px; }
+  .accuracy { align-items: flex-start; padding-top: 18px; border-top: 1px solid #e1d9f1; }
+  .accuracy strong { font-size: 40px; }
+  .summary article { padding: 18px 14px; }
+  .summary strong { font-size: 27px; }
+  .actions { gap: 8px; }
+  .primaryLink { width: 100%; box-sizing: border-box; text-align: center; }
+  .secondaryLink { flex: 1; text-align: center; }
+  .filters { gap: 6px; }
+  .filters button { padding: 9px 11px; font-size: 11px; }
+  .resultCard { padding: 19px 15px; }
+  .resultCard h3 { font-size: 13px; }
+}
